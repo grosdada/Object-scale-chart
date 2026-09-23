@@ -1,0 +1,7 @@
+{
+  "name": "echelle-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Atelier local de comparaison de proportions pour la vidéo IA",
+  "scripts": { "start": "node server.cjs", "test": "node --test tests/core.test.cjs" }
+}
