@@ -50,11 +50,11 @@
     const items=value.items.map(s=>{
       if(!s||typeof s.id!=='string'||ids.has(s.id)||!/^[\w-]{1,100}$/.test(s.id))throw Error('Identifiants de sujets invalides.');ids.add(s.id);
       if(typeof s.name!=='string'||!s.name.trim()||s.name.length>60||!Object.keys(categories).includes(s.category))throw Error('Nom ou nature de sujet invalide.');
-      if(!Number.isFinite(s.size)||s.size<1e-6||s.size>1e6||!Number.isFinite(s.aspect)||s.aspect<.001||s.aspect>1000||!Number.isFinite(s.x)||s.x<0||s.x>1e9||!['height','width'].includes(s.axis)||!units[s.unit]||!/^#[\da-f]{6}$/i.test(s.color))throw Error('Dimensions ou couleurs invalides.');
+      if(!Number.isFinite(s.size)||s.size<1e-6||s.size>1e6||!Number.isFinite(s.aspect)||s.aspect<.001||s.aspect>1000||!Number.isFinite(s.x)||s.x<0||s.x>1e9||!['height','width'].includes(s.axis)||!units[s.unit]||!/^#[\da-f]{6}$/i.test(s.color)||('offsetY'in s&&(!Number.isFinite(s.offsetY)||s.offsetY<-.5||s.offsetY>.5)))throw Error('Dimensions ou couleurs invalides.');
       if(s.category==='human'&&++humans>15)throw Error('Le tableau accepte au maximum 15 sujets humains.');
       const preset=catalogue.find(p=>p.id===s.presetId);
       if(!preset&&!(typeof s.image==='string'&&s.image.length<12e6&&/^data:image\/(png|jpeg|webp);base64,[A-Za-z\d+/=]+$/.test(s.image)))throw Error('Image ou silhouette de sujet invalide.');
-      return{id:s.id,name:s.name,category:s.category,size:s.size,aspect:s.aspect,axis:s.axis,unit:s.unit,color:s.color,x:s.x,...(preset?{presetId:preset.id}:{image:s.image})};
+      return{id:s.id,name:s.name,category:s.category,size:s.size,aspect:preset?preset.aspect:s.aspect,axis:s.axis,unit:s.unit,color:s.color,x:s.x,...(preset?{presetId:preset.id}:{image:s.image,offsetY:Number.isFinite(s.offsetY)?s.offsetY:0})};
     });
     const input=value.settings||{},settings={...defaults};
     ['background','gridColor'].forEach(k=>{if(typeof input[k]==='string'&&/^#[\da-f]{6}$/i.test(input[k]))settings[k]=input[k]});

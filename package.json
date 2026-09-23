@@ -7,13 +7,18 @@
   "scripts": {
     "start": "node server.cjs",
     "test": "node --test tests/*.test.cjs",
+    "build:ai": "esbuild ai-cutout-entry.js --bundle --minify --format=iife --platform=browser --outfile=ai-cutout.js",
     "vectorize": "node scripts/vectorize_subjects.cjs",
     "desktop": "electron .",
-    "dist:win": "electron-builder --win portable --x64"
+    "dist:win": "npm run build:ai && electron-builder --win portable --x64"
   },
   "devDependencies": {
+    "@imgly/background-removal": "^1.7.0",
     "electron": "^44.4.5",
     "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "onnxruntime-web": "^1.21.0",
+    "playwright": "^1.63.0",
     "potrace": "^2.1.8"
   },
   "build": {
@@ -28,13 +33,23 @@
       "catalogue.js",
       "core.js",
       "cutout.js",
+      "ai-cutout.js",
+      "THIRD_PARTY_NOTICES.md",
       "subject-vectors.js",
       "version.js",
       "electron-main.cjs",
       "electron-preload.cjs",
       "package.json"
     ],
-    "directories": { "output": "dist", "buildResources": "build" },
-    "win": { "target": ["portable"], "icon": "build/icon.ico" }
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    }
   }
 }

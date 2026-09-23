@@ -16,9 +16,9 @@ const assert=require('node:assert/strict');
   assert.equal(await page.locator('.preset-card').count(),6);
   const groundGap=await page.evaluate(()=>{const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'),path=document.createElementNS(svg.namespaceURI,'path');svg.style.cssText='position:absolute;visibility:hidden';svg.append(path);document.body.append(svg);let worst={id:'',gap:0};for(const[id,vector]of Object.entries(SUBJECT_VECTORS)){svg.setAttribute('viewBox',vector.viewBox);path.setAttribute('d',vector.d);const box=path.getBBox(),height=Number(vector.viewBox.split(' ')[3]),gap=Math.abs(height-box.y-box.height);if(gap>worst.gap)worst={id,gap};}svg.remove();return worst;});assert.ok(groundGap.gap<1.1,`vector ground gap ${groundGap.id}: ${groundGap.gap}`);
   assert.equal(await page.locator('[data-ui-language="en"]').getAttribute('aria-pressed'),'true');
-  assert.match(await page.locator('#preset-tab').textContent(),/Library/);
-  await page.locator('[data-ui-language="fr"]').click();assert.match(await page.locator('#preset-tab').textContent(),/Bibliothèque/);
-  await page.locator('[data-ui-language="en"]').click();assert.match(await page.locator('#preset-tab').textContent(),/Library/);
+  assert.match(await page.locator('#preset-tab').textContent(),/Presets/);
+  await page.locator('[data-ui-language="fr"]').click();assert.match(await page.locator('#import-tab').textContent(),/Importer/);
+  await page.locator('[data-ui-language="en"]').click();assert.match(await page.locator('#import-tab').textContent(),/Import/);
   await page.locator('#ui-theme-toggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');await page.screenshot({path:'test-results/night.png',fullPage:true});
   await page.locator('#ui-theme-toggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
   await page.locator('#update-button').click();await page.waitForFunction(()=>document.getElementById('update-button').textContent.includes('1.2.0'));assert.match(await page.locator('#update-button').textContent(),/Download v1.2.0/);
@@ -48,10 +48,11 @@ const assert=require('node:assert/strict');
   // Raster fixture with an opaque background and a tall subject, then local background removal.
   const pngBuffer=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=100;c.height=200;const x=c.getContext('2d');x.fillStyle='white';x.fillRect(0,0,100,200);x.fillStyle='#ff4500';x.fillRect(35,20,30,160);return c.toDataURL().split(',')[1];});
   fs.writeFileSync('test-results/subject.png',Buffer.from(pngBuffer,'base64'));
-  await page.locator('#import-tab').click();await page.locator('#subject-file').setInputFiles('test-results/subject.png');await page.locator('#add-import').waitFor({state:'visible'});await page.waitForFunction(()=>document.getElementById('cutout-status').textContent.includes('Fond retiré'));
+  await page.locator('#import-tab').click();await page.locator('#cutout-method').selectOption('fast');await page.locator('#subject-file').setInputFiles('test-results/subject.png');await page.locator('#add-import').waitFor({state:'visible'});await page.waitForFunction(()=>document.getElementById('cutout-status').textContent.includes('Fond retiré'));
   await page.waitForFunction(()=>!document.getElementById('add-import').disabled);assert.match(await page.locator('#cutout-status').textContent(),/Fond retiré/);
   await page.locator('#import-name').fill('Sujet importé');await page.locator('#import-size').fill('2');await page.locator('#add-import').click();
   assert.equal(await page.locator('.scene-row').count(),4);assert.match(await page.locator('#prompt-output').inputValue(),/Sujet importé/);
+  await page.locator('#my-tab').click();assert.equal(await page.locator('[data-personal]').count(),1);await page.locator('[data-personal]').click();assert.equal(await page.locator('.scene-row').count(),5);await page.locator('#undo-button').click();
   const imported=await page.locator('#board image').evaluate(el=>({width:+el.getAttribute('width'),height:+el.getAttribute('height')}));assert.ok(Math.abs(imported.width/imported.height-30/160)<1e-6);
   await page.waitForTimeout(800);await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.scene-row').length===4);assert.equal(await page.locator('#board image').count(),1);
   // Export an image containing the imported raster too.

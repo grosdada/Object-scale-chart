@@ -33,6 +33,11 @@ test('project round trip keeps visual settings, images and edited prompt',()=>{
   const image={...p.items[0],id:'image-1',image:'data:image/png;base64,aGVsbG8=',aspect:2};delete image.presetId;p.items.push(image);
   assert.equal(C.validateProject(p,catalogue).items[1].image,image.image);
 });
+test('project validation refreshes preset proportions from the catalogue',()=>{
+  const item=C.fromPreset(catalogue[0]);
+  const p=project([{...item,aspect:99}]);
+  assert.equal(C.validateProject(p,catalogue).items[0].aspect,catalogue[0].aspect);
+});
 test('reject unsafe project data and human overflow without losing existing state',()=>{
   const item=C.fromPreset(catalogue[1]);
   assert.throws(()=>C.validateProject(project([{...item,size:-1}]),catalogue));
