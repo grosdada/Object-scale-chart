@@ -15,9 +15,15 @@
     CATALOGUE.forEach(p=>{svg.innerHTML=`<g>${Shapes.markup(p)}</g>`;const b=svg.firstElementChild.getBBox();shapes.set(p.id,{markup:Shapes.markup(p),box:`${b.x} ${b.y} ${b.width} ${b.height}`});});svg.remove();
   }
   prepareShapes();
-  function miniature(s){if(s.image)return `<img src="${s.image}" alt="">`;const a=shapes.get(s.presetId||s.id);return `<svg viewBox="${a.box}" style="color:${s.color||'currentColor'}" fill="currentColor" aria-hidden="true">${a.markup}</svg>`;}
+  const presetAsset=s=>globalThis.SUBJECT_ASSETS?.[s.presetId||s.id];
+  const assetFilterId=s=>`asset-${(s.presetId||s.id).replace(/[^a-z0-9_-]/gi,'')}-${(s.color||'7787a1').replace('#','')}`;
+  function filteredAsset(s,width=100,height=100,preserve='xMidYMid meet'){
+    const asset=presetAsset(s),filter=assetFilterId(s),color=s.color||'#7787a1';
+    return `<svg viewBox="0 0 ${width} ${height}" aria-hidden="true" overflow="visible"><defs><filter id="${filter}" color-interpolation-filters="sRGB"><feFlood flood-color="${color}" result="assetColor"/><feComposite in="assetColor" in2="SourceAlpha" operator="in"/></filter></defs><image href="${asset}" x="0" y="0" width="${width}" height="${height}" preserveAspectRatio="${preserve}" filter="url(#${filter})"/></svg>`;
+  }
+  function miniature(s){if(s.image)return `<img src="${s.image}" alt="">`;if(presetAsset(s))return filteredAsset(s);const a=shapes.get(s.presetId||s.id);return `<svg viewBox="${a.box}" style="color:${s.color||'currentColor'}" fill="currentColor" aria-hidden="true">${a.markup}</svg>`;}
   const demo=()=>({version:1,title:'Étude de proportions',items:C.arrange([C.fromPreset(CATALOGUE[1],0),C.fromPreset(CATALOGUE[4],1),C.fromPreset(CATALOGUE.find(p=>p.shape==='gorilla'),2)]),settings:{...C.defaults},promptOverride:null});
-  let state=demo(),selected=state.items[0].id,category='human',zoom=1,pan=0,history=[],future=[],db=null,saveTimer,toastTimer,drag=null,currentLayout=null,pendingConfirm=null,originalImage=null,importedImage=null,processing=0;
+  let state=demo(),selected=state.items[0].id,category='human',zoom=1,pan=0,history=[],future=[],db=null,saveTimer,toastTimer,drag=null,currentLayout=null,pendingConfirm=null,originalImage=null,originalPreview=null,importedImage=null,processing=0,showingOriginal=false,cutoutTimer=null;
   // All item and setting fields are primitives; share image strings across undo snapshots.
   const clone=v=>({...v,items:v.items.map(s=>({...s})),settings:{...v.settings}});
   const selectedItem=()=>state.items.find(s=>s.id===selected);
@@ -80,6 +86,7 @@
       const s=state.items.find(i=>i.id===p.id),active=!forExport&&s.id===selected;
       out+=`<g class="subject" data-subject="${s.id}" ${forExport?'':`tabindex="0" role="button" aria-label="${esc(s.name)}, ${esc(C.dimensionText(s,true))}. Flèches pour déplacer, plus ou moins pour redimensionner."`}><title>${esc(s.name)} — ${esc(C.dimensionText(s,true))}</title>`;
       if(s.image)out+=`<image href="${s.image}" x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" preserveAspectRatio="none"/>`;
+      else if(presetAsset(s)){const filter=assetFilterId(s);out+=`<svg x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" viewBox="0 0 1 1" preserveAspectRatio="none" overflow="visible"><defs><filter id="${filter}" color-interpolation-filters="sRGB"><feFlood flood-color="${s.color}" result="assetColor"/><feComposite in="assetColor" in2="SourceAlpha" operator="in"/></filter></defs><image href="${presetAsset(s)}" x="0" y="0" width="1" height="1" preserveAspectRatio="none" filter="url(#${filter})"/></svg>`;}
       else{const a=shapes.get(s.presetId);out+=`<svg x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" viewBox="${a.box}" preserveAspectRatio="none" overflow="visible" fill="${s.color}" color="${s.color}">${a.markup}</svg>`;}
       if(!forExport)out+=`<rect class="hitbox" x="${p.x-3}" y="${p.y-3}" width="${Math.max(p.w+6,10)}" height="${Math.max(p.h+6,10)}" fill="transparent"/>`;
       if(active){out+=`<rect x="${p.x-6}" y="${p.y-6}" width="${p.w+12}" height="${p.h+12}" fill="none" stroke="#8578d7" stroke-width="1" stroke-dasharray="4 3"/><path d="M${p.x-15} ${p.y}h-5V${l.ground}h5M${p.x-20} ${p.y}h5" fill="none" stroke="#aa9bdc" stroke-width=".8"/>`;['left','right'].forEach(side=>{const x=side==='left'?p.x:p.x+p.w;out+=`<rect class="resize-handle" data-resize="${side}" data-subject="${s.id}" x="${x-5}" y="${p.y-5}" width="10" height="10" rx="2" fill="#fff" stroke="#8578d7" stroke-width="1.5"/>`;});}
@@ -171,17 +178,32 @@
   $('new-project').onclick=()=>confirm('Créer un nouveau tableau ?',()=>change(()=>{state={...demo(),items:[],title:'Nouveau tableau'};selected=null;},{fit:true}));
   $('demo-project').onclick=()=>confirm('Charger la démonstration ?',()=>change(()=>{state=demo();selected=state.items[0].id;},{fit:true}));
   function trimCanvas(canvas){const ctx=canvas.getContext('2d',{willReadFrequently:true}),w=canvas.width,h=canvas.height,pixels=ctx.getImageData(0,0,w,h);let x0=w,y0=h,x1=-1,y1=-1;for(let y=0;y<h;y++)for(let x=0;x<w;x++){if(pixels.data[(y*w+x)*4+3]>12){x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}}if(x1<0)throw Error('Le détourage a supprimé tout le sujet. Réduisez la tolérance.');const result=document.createElement('canvas');result.width=x1-x0+1;result.height=y1-y0+1;result.getContext('2d').drawImage(canvas,x0,y0,result.width,result.height,0,0,result.width,result.height);return result;}
-  function removeBackground(canvas,tolerance){const ctx=canvas.getContext('2d',{willReadFrequently:true}),w=canvas.width,h=canvas.height,img=ctx.getImageData(0,0,w,h),a=img.data,total=w*h,seen=new Uint8Array(total),queue=new Int32Array(total);let head=0,tail=0;
-    const cornerIndexes=[0,w-1,(h-1)*w,w*h-1];const samples=cornerIndexes.map(i=>[a[i*4],a[i*4+1],a[i*4+2],a[i*4+3]]).filter(v=>v[3]>10);
-    const match=i=>a[i*4+3]<12||samples.some(c=>Math.hypot(a[i*4]-c[0],a[i*4+1]-c[1],a[i*4+2]-c[2])<tolerance*2.2);
-    const push=i=>{if(!seen[i]){seen[i]=1;if(match(i))queue[tail++]=i;}};
-    for(let x=0;x<w;x++){push(x);push((h-1)*w+x);}for(let y=0;y<h;y++){push(y*w);push(y*w+w-1);}while(head<tail){const i=queue[head++];a[i*4+3]=0;if(i%w>0)push(i-1);if(i%w<w-1)push(i+1);if(i>=w)push(i-w);if(i<total-w)push(i+w);}ctx.putImageData(img,0,0);
+  function setCutoutStatus(message,kind=''){$('cutout-status').textContent=message;$('cutout-status').className='cutout-status '+kind;}
+  function updatePreview(){if(!importedImage)return;$('import-preview').src=showingOriginal&&originalPreview?originalPreview:importedImage.image;$('toggle-cutout').textContent=showingOriginal?'Voir le détourage':'Voir l’original';$('toggle-cutout').hidden=!$('remove-background').checked||!originalPreview;}
+  async function processImage(){
+    if(!originalImage)return;
+    const ticket=++processing,cutout=$('remove-background').checked;
+    $('add-import').disabled=true;importedImage=null;$('import-error').textContent='';$('cutout-working').hidden=false;setCutoutStatus(cutout?'Analyse du fond en cours…':'Image originale conservée.');
+    try{
+      await new Promise(r=>requestAnimationFrame(()=>setTimeout(r,0)));if(ticket!==processing)return;
+      const maxSide=cutout?1100:1400,factor=Math.min(1,maxSide/Math.max(originalImage.width,originalImage.height)),canvas=document.createElement('canvas');
+      canvas.width=Math.max(1,Math.round(originalImage.width*factor));canvas.height=Math.max(1,Math.round(originalImage.height*factor));canvas.getContext('2d').drawImage(originalImage,0,0,canvas.width,canvas.height);
+      originalPreview=canvas.toDataURL('image/png');
+      let result={skipped:true,message:'Image originale conservée.'};
+      if(cutout){const context=canvas.getContext('2d',{willReadFrequently:true}),pixels=context.getImageData(0,0,canvas.width,canvas.height);result=AutoCutout.autoCutout(pixels,Number($('background-tolerance').value));if(!result.skipped)context.putImageData(pixels,0,0);}
+      const cropped=trimCanvas(canvas),aspect=cropped.width/cropped.height;if(aspect<.001||aspect>1000)throw Error('Les proportions de cette image ne sont pas prises en charge.');
+      importedImage={image:cropped.toDataURL('image/png'),aspect};showingOriginal=false;updatePreview();$('upload-zone').hidden=true;$('import-preview-wrap').hidden=false;$('add-import').disabled=false;
+      setCutoutStatus(result.message,result.skipped&&cutout?'warning':'success');
+    }catch(error){$('import-error').textContent=error.message;setCutoutStatus('Détourage interrompu.','warning');}
+    finally{if(ticket===processing)$('cutout-working').hidden=true;}
   }
-  async function processImage(){if(!originalImage)return;const ticket=++processing;$('add-import').disabled=true;importedImage=null;$('import-error').textContent='';try{await new Promise(r=>requestAnimationFrame(r));if(ticket!==processing)return;const factor=Math.min(1,1400/Math.max(originalImage.width,originalImage.height)),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(originalImage.width*factor));canvas.height=Math.max(1,Math.round(originalImage.height*factor));canvas.getContext('2d').drawImage(originalImage,0,0,canvas.width,canvas.height);if($('remove-background').checked)removeBackground(canvas,Number($('background-tolerance').value));const cropped=trimCanvas(canvas),aspect=cropped.width/cropped.height;if(aspect<.001||aspect>1000)throw Error('Les proportions de cette image ne sont pas prises en charge.');importedImage={image:cropped.toDataURL('image/png'),aspect};$('import-preview').src=importedImage.image;$('upload-zone').hidden=true;$('import-preview-wrap').hidden=false;$('add-import').disabled=false;}catch(error){$('import-error').textContent=error.message;}}
   async function loadImage(file){$('import-error').textContent='';if(!['image/png','image/jpeg','image/webp'].includes(file.type)){$('import-error').textContent='Choisissez une image PNG, JPG ou WebP.';return;}if(file.size>15*1024*1024){$('import-error').textContent='L’image dépasse 15 Mo. Réduisez sa résolution.';return;}const url=URL.createObjectURL(file);try{const image=new Image();await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=()=>reject(Error('Cette image ne peut pas être lue.'));image.src=url;});if(image.width*image.height>50e6)throw Error('Cette image dépasse 50 mégapixels. Réduisez sa résolution.');originalImage=image;$('import-name').value=file.name.replace(/\.[^.]+$/,'').slice(0,60);await processImage();}catch(error){$('import-error').textContent=error.message;}finally{URL.revokeObjectURL(url);}}
   $('subject-file').onchange=e=>{if(e.target.files[0])loadImage(e.target.files[0]);e.target.value='';};$('change-image').onclick=()=>$('subject-file').click();
+  $('toggle-cutout').onclick=()=>{showingOriginal=!showingOriginal;updatePreview();};
   $('upload-zone').ondragover=e=>{e.preventDefault();$('upload-zone').classList.add('drag-over');};$('upload-zone').ondragleave=()=>$('upload-zone').classList.remove('drag-over');$('upload-zone').ondrop=e=>{e.preventDefault();$('upload-zone').classList.remove('drag-over');if(e.dataTransfer.files[0])loadImage(e.dataTransfer.files[0]);};
-  $('remove-background').onchange=()=>{$('tolerance-field').hidden=!$('remove-background').checked;processImage();};$('background-tolerance').onchange=processImage;
+  $('remove-background').onchange=()=>{$('tolerance-field').hidden=!$('remove-background').checked;showingOriginal=false;processImage();};
+  $('background-tolerance').oninput=e=>{$('cutout-strength').value=e.target.value;clearTimeout(cutoutTimer);cutoutTimer=setTimeout(processImage,320);};
+  $('background-tolerance').onchange=()=>{clearTimeout(cutoutTimer);processImage();};
   $('import-nature').onchange=e=>{if(e.target.value==='vehicle')$('import-axis').value='width';else $('import-axis').value='height';};
   $('import-form').onsubmit=e=>{e.preventDefault();if(!importedImage)return;const size=Number($('import-size').value)*C.units[$('import-unit').value],name=$('import-name').value.trim();if(!name||!Number.isFinite(size)||size<1e-6||size>1e6){$('import-error').textContent='Renseignez un nom et une taille entre 0,001 mm et 1 000 km.';return;}const subject={id:C.uid(),name,category:$('import-nature').value,axis:$('import-axis').value,size,unit:$('import-unit').value,color:C.colors[state.items.length%C.colors.length],x:0,...importedImage};if(add(subject)){$('import-error').textContent='';}};
   document.addEventListener('keydown',e=>{const editing=e.target.matches('input,textarea,select')||document.querySelector('dialog[open]');if(editing)return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redo():undo();}else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();redo();}else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='d'){e.preventDefault();duplicate();}else if((e.key==='Delete'||e.key==='Backspace')&&!e.target.closest('#board')){e.preventDefault();remove();}else if(e.key==='/'){e.preventDefault();switchTab(false);$('search').focus();}else if(e.key==='Escape'){$('project-menu').hidden=true;}});

@@ -1,0 +1,1271 @@
+[
+  {
+    "grid": 1,
+    "position": 1,
+    "presetId": "human-1",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 2,
+    "presetId": "human-2",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 3,
+    "presetId": "human-3",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 4,
+    "presetId": "human-4",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 5,
+    "presetId": "human-5",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 6,
+    "presetId": "human-6",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 7,
+    "presetId": "animal-7",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 8,
+    "presetId": "animal-8",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 1,
+    "position": 9,
+    "presetId": "animal-9",
+    "status": "missing_duplicate_grid"
+  },
+  {
+    "grid": 2,
+    "position": 1,
+    "presetId": "animal-10",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-10.png",
+    "width": 242,
+    "height": 183
+  },
+  {
+    "grid": 2,
+    "position": 2,
+    "presetId": "animal-11",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-11.png",
+    "width": 176,
+    "height": 283
+  },
+  {
+    "grid": 2,
+    "position": 3,
+    "presetId": "animal-12",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-12.png",
+    "width": 249,
+    "height": 156
+  },
+  {
+    "grid": 2,
+    "position": 4,
+    "presetId": "animal-13",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-13.png",
+    "width": 271,
+    "height": 133
+  },
+  {
+    "grid": 2,
+    "position": 5,
+    "presetId": "animal-14",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-14.png",
+    "width": 247,
+    "height": 155
+  },
+  {
+    "grid": 2,
+    "position": 6,
+    "presetId": "animal-15",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-15.png",
+    "width": 236,
+    "height": 146
+  },
+  {
+    "grid": 2,
+    "position": 7,
+    "presetId": "animal-16",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-16.png",
+    "width": 252,
+    "height": 126
+  },
+  {
+    "grid": 2,
+    "position": 8,
+    "presetId": "animal-17",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-17.png",
+    "width": 246,
+    "height": 213
+  },
+  {
+    "grid": 2,
+    "position": 9,
+    "presetId": "animal-18",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-18.png",
+    "width": 210,
+    "height": 184
+  },
+  {
+    "grid": 3,
+    "position": 1,
+    "presetId": "animal-19",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-19.png",
+    "width": 262,
+    "height": 149
+  },
+  {
+    "grid": 3,
+    "position": 2,
+    "presetId": "animal-20",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-20.png",
+    "width": 187,
+    "height": 142
+  },
+  {
+    "grid": 3,
+    "position": 3,
+    "presetId": "animal-21",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-21.png",
+    "width": 189,
+    "height": 179
+  },
+  {
+    "grid": 3,
+    "position": 4,
+    "presetId": "animal-22",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-22.png",
+    "width": 228,
+    "height": 116
+  },
+  {
+    "grid": 3,
+    "position": 5,
+    "presetId": "animal-23",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-23.png",
+    "width": 155,
+    "height": 198
+  },
+  {
+    "grid": 3,
+    "position": 6,
+    "presetId": "animal-24",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-24.png",
+    "width": 265,
+    "height": 125
+  },
+  {
+    "grid": 3,
+    "position": 7,
+    "presetId": "animal-25",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-25.png",
+    "width": 266,
+    "height": 126
+  },
+  {
+    "grid": 3,
+    "position": 8,
+    "presetId": "animal-26",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-26.png",
+    "width": 225,
+    "height": 197
+  },
+  {
+    "grid": 3,
+    "position": 9,
+    "presetId": "animal-27",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-27.png",
+    "width": 145,
+    "height": 154
+  },
+  {
+    "grid": 4,
+    "position": 1,
+    "presetId": "animal-28",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-28.png",
+    "width": 183,
+    "height": 180
+  },
+  {
+    "grid": 4,
+    "position": 2,
+    "presetId": "animal-29",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-29.png",
+    "width": 162,
+    "height": 122
+  },
+  {
+    "grid": 4,
+    "position": 3,
+    "presetId": "animal-30",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-30.png",
+    "width": 250,
+    "height": 75
+  },
+  {
+    "grid": 4,
+    "position": 4,
+    "presetId": "animal-31",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-31.png",
+    "width": 176,
+    "height": 114
+  },
+  {
+    "grid": 4,
+    "position": 5,
+    "presetId": "animal-32",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-32.png",
+    "width": 270,
+    "height": 149
+  },
+  {
+    "grid": 4,
+    "position": 6,
+    "presetId": "animal-33",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-33.png",
+    "width": 127,
+    "height": 210
+  },
+  {
+    "grid": 4,
+    "position": 7,
+    "presetId": "animal-34",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-34.png",
+    "width": 96,
+    "height": 184
+  },
+  {
+    "grid": 4,
+    "position": 8,
+    "presetId": "animal-35",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-35.png",
+    "width": 219,
+    "height": 133
+  },
+  {
+    "grid": 4,
+    "position": 9,
+    "presetId": "animal-36",
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-36.png",
+    "width": 256,
+    "height": 115
+  },
+  {
+    "grid": 5,
+    "position": 1,
+    "presetId": "vehicle-37",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-37.png",
+    "width": 178,
+    "height": 89
+  },
+  {
+    "grid": 5,
+    "position": 2,
+    "presetId": "vehicle-38",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-38.png",
+    "width": 190,
+    "height": 91
+  },
+  {
+    "grid": 5,
+    "position": 3,
+    "presetId": "vehicle-39",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-39.png",
+    "width": 244,
+    "height": 93
+  },
+  {
+    "grid": 5,
+    "position": 4,
+    "presetId": "vehicle-40",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-40.png",
+    "width": 237,
+    "height": 94
+  },
+  {
+    "grid": 5,
+    "position": 5,
+    "presetId": "vehicle-41",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-41.png",
+    "width": 240,
+    "height": 90
+  },
+  {
+    "grid": 5,
+    "position": 6,
+    "presetId": "vehicle-42",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-42.png",
+    "width": 237,
+    "height": 94
+  },
+  {
+    "grid": 5,
+    "position": 7,
+    "presetId": "vehicle-43",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-43.png",
+    "width": 223,
+    "height": 112
+  },
+  {
+    "grid": 5,
+    "position": 8,
+    "presetId": "vehicle-44",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-44.png",
+    "width": 206,
+    "height": 111
+  },
+  {
+    "grid": 5,
+    "position": 9,
+    "presetId": "vehicle-45",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-45.png",
+    "width": 241,
+    "height": 105
+  },
+  {
+    "grid": 6,
+    "position": 1,
+    "presetId": "vehicle-46",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-46.png",
+    "width": 211,
+    "height": 106
+  },
+  {
+    "grid": 6,
+    "position": 2,
+    "presetId": "vehicle-47",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-47.png",
+    "width": 204,
+    "height": 125
+  },
+  {
+    "grid": 6,
+    "position": 3,
+    "presetId": "vehicle-48",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-48.png",
+    "width": 272,
+    "height": 72
+  },
+  {
+    "grid": 6,
+    "position": 4,
+    "presetId": "vehicle-49",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-49.png",
+    "width": 184,
+    "height": 120
+  },
+  {
+    "grid": 6,
+    "position": 5,
+    "presetId": "vehicle-50",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-50.png",
+    "width": 182,
+    "height": 106
+  },
+  {
+    "grid": 6,
+    "position": 6,
+    "presetId": "vehicle-51",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-51.png",
+    "width": 204,
+    "height": 110
+  },
+  {
+    "grid": 6,
+    "position": 7,
+    "presetId": "vehicle-52",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-52.png",
+    "width": 197,
+    "height": 120
+  },
+  {
+    "grid": 6,
+    "position": 8,
+    "presetId": "vehicle-53",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-53.png",
+    "width": 175,
+    "height": 126
+  },
+  {
+    "grid": 6,
+    "position": 9,
+    "presetId": "vehicle-54",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-54.png",
+    "width": 155,
+    "height": 117
+  },
+  {
+    "grid": 7,
+    "position": 1,
+    "presetId": "vehicle-55",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-55.png",
+    "width": 218,
+    "height": 143
+  },
+  {
+    "grid": 7,
+    "position": 2,
+    "presetId": "vehicle-56",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-56.png",
+    "width": 241,
+    "height": 151
+  },
+  {
+    "grid": 7,
+    "position": 3,
+    "presetId": "vehicle-57",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-57.png",
+    "width": 225,
+    "height": 142
+  },
+  {
+    "grid": 7,
+    "position": 4,
+    "presetId": "vehicle-58",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-58.png",
+    "width": 214,
+    "height": 145
+  },
+  {
+    "grid": 7,
+    "position": 5,
+    "presetId": "vehicle-59",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-59.png",
+    "width": 258,
+    "height": 69
+  },
+  {
+    "grid": 7,
+    "position": 6,
+    "presetId": "vehicle-60",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-60.png",
+    "width": 262,
+    "height": 103
+  },
+  {
+    "grid": 7,
+    "position": 7,
+    "presetId": "vehicle-61",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-61.png",
+    "width": 176,
+    "height": 193
+  },
+  {
+    "grid": 7,
+    "position": 8,
+    "presetId": "vehicle-62",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-62.png",
+    "width": 214,
+    "height": 187
+  },
+  {
+    "grid": 7,
+    "position": 9,
+    "presetId": "vehicle-63",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-63.png",
+    "width": 267,
+    "height": 113
+  },
+  {
+    "grid": 8,
+    "position": 1,
+    "presetId": "vehicle-64",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-64.png",
+    "width": 258,
+    "height": 100
+  },
+  {
+    "grid": 8,
+    "position": 2,
+    "presetId": "vehicle-65",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-65.png",
+    "width": 266,
+    "height": 89
+  },
+  {
+    "grid": 8,
+    "position": 3,
+    "presetId": "vehicle-66",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-66.png",
+    "width": 256,
+    "height": 81
+  },
+  {
+    "grid": 8,
+    "position": 4,
+    "presetId": "vehicle-67",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-67.png",
+    "width": 229,
+    "height": 223
+  },
+  {
+    "grid": 8,
+    "position": 5,
+    "presetId": "vehicle-68",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-68.png",
+    "width": 326,
+    "height": 231
+  },
+  {
+    "grid": 8,
+    "position": 6,
+    "presetId": "vehicle-69",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-69.png",
+    "width": 279,
+    "height": 233
+  },
+  {
+    "grid": 8,
+    "position": 7,
+    "presetId": "vehicle-70",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-70.png",
+    "width": 195,
+    "height": 67
+  },
+  {
+    "grid": 8,
+    "position": 8,
+    "presetId": "vehicle-71",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-71.png",
+    "width": 191,
+    "height": 62
+  },
+  {
+    "grid": 8,
+    "position": 9,
+    "presetId": "vehicle-72",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-72.png",
+    "width": 198,
+    "height": 73
+  },
+  {
+    "grid": 9,
+    "position": 1,
+    "presetId": "vehicle-73",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-73.png",
+    "width": 253,
+    "height": 98
+  },
+  {
+    "grid": 9,
+    "position": 2,
+    "presetId": "vehicle-74",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-74.png",
+    "width": 282,
+    "height": 110
+  },
+  {
+    "grid": 9,
+    "position": 3,
+    "presetId": "vehicle-75",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-75.png",
+    "width": 243,
+    "height": 80
+  },
+  {
+    "grid": 9,
+    "position": 4,
+    "presetId": "vehicle-76",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-76.png",
+    "width": 239,
+    "height": 85
+  },
+  {
+    "grid": 9,
+    "position": 5,
+    "presetId": "vehicle-77",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-77.png",
+    "width": 227,
+    "height": 85
+  },
+  {
+    "grid": 9,
+    "position": 6,
+    "presetId": "vehicle-78",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-78.png",
+    "width": 217,
+    "height": 95
+  },
+  {
+    "grid": 9,
+    "position": 7,
+    "presetId": "vehicle-79",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-79.png",
+    "width": 241,
+    "height": 89
+  },
+  {
+    "grid": 9,
+    "position": 8,
+    "presetId": "vehicle-80",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-80.png",
+    "width": 248,
+    "height": 95
+  },
+  {
+    "grid": 9,
+    "position": 9,
+    "presetId": "vehicle-81",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-81.png",
+    "width": 211,
+    "height": 102
+  },
+  {
+    "grid": 10,
+    "position": 1,
+    "presetId": "vehicle-82",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-82.png",
+    "width": 285,
+    "height": 118
+  },
+  {
+    "grid": 10,
+    "position": 2,
+    "presetId": "vehicle-83",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-83.png",
+    "width": 244,
+    "height": 110
+  },
+  {
+    "grid": 10,
+    "position": 3,
+    "presetId": "vehicle-84",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-84.png",
+    "width": 297,
+    "height": 71
+  },
+  {
+    "grid": 10,
+    "position": 4,
+    "presetId": "vehicle-85",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-85.png",
+    "width": 274,
+    "height": 96
+  },
+  {
+    "grid": 10,
+    "position": 5,
+    "presetId": "vehicle-86",
+    "status": "processed",
+    "file": "assets/subjects/presets/vehicle-86.png",
+    "width": 248,
+    "height": 123
+  },
+  {
+    "grid": 10,
+    "position": 6,
+    "presetId": "extra-minibus",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-minibus.png",
+    "width": 222,
+    "height": 94
+  },
+  {
+    "grid": 10,
+    "position": 7,
+    "presetId": "extra-mobile-crane",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-mobile-crane.png",
+    "width": 240,
+    "height": 101
+  },
+  {
+    "grid": 10,
+    "position": 8,
+    "presetId": "extra-tank",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-tank.png",
+    "width": 252,
+    "height": 114
+  },
+  {
+    "grid": 10,
+    "position": 9,
+    "presetId": "extra-submarine",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-submarine.png",
+    "width": 272,
+    "height": 135
+  },
+  {
+    "grid": 11,
+    "position": 1,
+    "presetId": "building-87",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-87.png",
+    "width": 160,
+    "height": 128
+  },
+  {
+    "grid": 11,
+    "position": 2,
+    "presetId": "building-88",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-88.png",
+    "width": 174,
+    "height": 171
+  },
+  {
+    "grid": 11,
+    "position": 3,
+    "presetId": "building-89",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-89.png",
+    "width": 214,
+    "height": 96
+  },
+  {
+    "grid": 11,
+    "position": 4,
+    "presetId": "building-90",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-90.png",
+    "width": 217,
+    "height": 128
+  },
+  {
+    "grid": 11,
+    "position": 5,
+    "presetId": "building-91",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-91.png",
+    "width": 208,
+    "height": 113
+  },
+  {
+    "grid": 11,
+    "position": 6,
+    "presetId": "building-92",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-92.png",
+    "width": 100,
+    "height": 203
+  },
+  {
+    "grid": 11,
+    "position": 7,
+    "presetId": "building-93",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-93.png",
+    "width": 167,
+    "height": 160
+  },
+  {
+    "grid": 11,
+    "position": 8,
+    "presetId": "building-94",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-94.png",
+    "width": 226,
+    "height": 97
+  },
+  {
+    "grid": 11,
+    "position": 9,
+    "presetId": "building-95",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-95.png",
+    "width": 113,
+    "height": 183
+  },
+  {
+    "grid": 12,
+    "position": 1,
+    "presetId": "building-96",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-96.png",
+    "width": 129,
+    "height": 152
+  },
+  {
+    "grid": 12,
+    "position": 2,
+    "presetId": "building-97",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-97.png",
+    "width": 119,
+    "height": 180
+  },
+  {
+    "grid": 12,
+    "position": 3,
+    "presetId": "building-98",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-98.png",
+    "width": 82,
+    "height": 186
+  },
+  {
+    "grid": 12,
+    "position": 4,
+    "presetId": "building-99",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-99.png",
+    "width": 115,
+    "height": 179
+  },
+  {
+    "grid": 12,
+    "position": 5,
+    "presetId": "building-100",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-100.png",
+    "width": 104,
+    "height": 191
+  },
+  {
+    "grid": 12,
+    "position": 6,
+    "presetId": "building-101",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-101.png",
+    "width": 43,
+    "height": 196
+  },
+  {
+    "grid": 12,
+    "position": 7,
+    "presetId": "building-102",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-102.png",
+    "width": 108,
+    "height": 174
+  },
+  {
+    "grid": 12,
+    "position": 8,
+    "presetId": "building-103",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-103.png",
+    "width": 116,
+    "height": 184
+  },
+  {
+    "grid": 12,
+    "position": 9,
+    "presetId": "building-104",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-104.png",
+    "width": 80,
+    "height": 195
+  },
+  {
+    "grid": 13,
+    "position": 1,
+    "presetId": "building-105",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-105.png",
+    "width": 64,
+    "height": 234
+  },
+  {
+    "grid": 13,
+    "position": 2,
+    "presetId": "building-106",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-106.png",
+    "width": 100,
+    "height": 234
+  },
+  {
+    "grid": 13,
+    "position": 3,
+    "presetId": "building-107",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-107.png",
+    "width": 182,
+    "height": 91
+  },
+  {
+    "grid": 13,
+    "position": 4,
+    "presetId": "building-108",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-108.png",
+    "width": 229,
+    "height": 83
+  },
+  {
+    "grid": 13,
+    "position": 5,
+    "presetId": "building-109",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-109.png",
+    "width": 215,
+    "height": 103
+  },
+  {
+    "grid": 13,
+    "position": 6,
+    "presetId": "building-110",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-110.png",
+    "width": 166,
+    "height": 155
+  },
+  {
+    "grid": 13,
+    "position": 7,
+    "presetId": "building-111",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-111.png",
+    "width": 205,
+    "height": 129
+  },
+  {
+    "grid": 13,
+    "position": 8,
+    "presetId": "building-112",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-112.png",
+    "width": 86,
+    "height": 210
+  },
+  {
+    "grid": 13,
+    "position": 9,
+    "presetId": "building-113",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-113.png",
+    "width": 45,
+    "height": 213
+  },
+  {
+    "grid": 14,
+    "position": 1,
+    "presetId": "building-114",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-114.png",
+    "width": 165,
+    "height": 146
+  },
+  {
+    "grid": 14,
+    "position": 2,
+    "presetId": "building-115",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-115.png",
+    "width": 172,
+    "height": 147
+  },
+  {
+    "grid": 14,
+    "position": 3,
+    "presetId": "building-116",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-116.png",
+    "width": 208,
+    "height": 112
+  },
+  {
+    "grid": 14,
+    "position": 4,
+    "presetId": "building-117",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-117.png",
+    "width": 153,
+    "height": 203
+  },
+  {
+    "grid": 14,
+    "position": 5,
+    "presetId": "building-118",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-118.png",
+    "width": 144,
+    "height": 174
+  },
+  {
+    "grid": 14,
+    "position": 6,
+    "presetId": "building-119",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-119.png",
+    "width": 173,
+    "height": 154
+  },
+  {
+    "grid": 14,
+    "position": 7,
+    "presetId": "building-120",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-120.png",
+    "width": 181,
+    "height": 153
+  },
+  {
+    "grid": 14,
+    "position": 8,
+    "presetId": "building-121",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-121.png",
+    "width": 144,
+    "height": 186
+  },
+  {
+    "grid": 14,
+    "position": 9,
+    "presetId": "building-122",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-122.png",
+    "width": 117,
+    "height": 182
+  },
+  {
+    "grid": 15,
+    "position": 1,
+    "presetId": "building-123",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-123.png",
+    "width": 119,
+    "height": 237
+  },
+  {
+    "grid": 15,
+    "position": 2,
+    "presetId": "building-124",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-124.png",
+    "width": 157,
+    "height": 154
+  },
+  {
+    "grid": 15,
+    "position": 3,
+    "presetId": "building-125",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-125.png",
+    "width": 208,
+    "height": 117
+  },
+  {
+    "grid": 15,
+    "position": 4,
+    "presetId": "building-126",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-126.png",
+    "width": 335,
+    "height": 274
+  },
+  {
+    "grid": 15,
+    "position": 5,
+    "presetId": "building-127",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-127.png",
+    "width": 283,
+    "height": 239
+  },
+  {
+    "grid": 15,
+    "position": 6,
+    "presetId": "building-128",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-128.png",
+    "width": 335,
+    "height": 265
+  },
+  {
+    "grid": 15,
+    "position": 7,
+    "presetId": "building-129",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-129.png",
+    "width": 208,
+    "height": 143
+  },
+  {
+    "grid": 15,
+    "position": 8,
+    "presetId": "building-130",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-130.png",
+    "width": 131,
+    "height": 172
+  },
+  {
+    "grid": 15,
+    "position": 9,
+    "presetId": "building-131",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-131.png",
+    "width": 203,
+    "height": 84
+  },
+  {
+    "grid": 16,
+    "position": 1,
+    "presetId": "building-132",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-132.png",
+    "width": 252,
+    "height": 109
+  },
+  {
+    "grid": 16,
+    "position": 2,
+    "presetId": "building-133",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-133.png",
+    "width": 248,
+    "height": 126
+  },
+  {
+    "grid": 16,
+    "position": 3,
+    "presetId": "building-134",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-134.png",
+    "width": 259,
+    "height": 109
+  },
+  {
+    "grid": 16,
+    "position": 4,
+    "presetId": "building-135",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-135.png",
+    "width": 140,
+    "height": 237
+  },
+  {
+    "grid": 16,
+    "position": 5,
+    "presetId": "building-136",
+    "status": "processed",
+    "file": "assets/subjects/presets/building-136.png",
+    "width": 71,
+    "height": 241
+  },
+  {
+    "grid": 16,
+    "position": 6,
+    "presetId": "extra-radio-telescope",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-radio-telescope.png",
+    "width": 142,
+    "height": 147
+  },
+  {
+    "grid": 16,
+    "position": 7,
+    "presetId": "extra-dam",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-dam.png",
+    "width": 203,
+    "height": 144
+  },
+  {
+    "grid": 16,
+    "position": 8,
+    "presetId": "extra-harbor-crane",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-harbor-crane.png",
+    "width": 188,
+    "height": 155
+  },
+  {
+    "grid": 16,
+    "position": 9,
+    "presetId": "extra-launch-tower",
+    "status": "processed",
+    "file": "assets/subjects/extras/extra-launch-tower.png",
+    "width": 113,
+    "height": 216
+  }
+]

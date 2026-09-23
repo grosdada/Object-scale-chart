@@ -11,6 +11,8 @@
   <script defer src="shapes.js"></script>
   <script defer src="catalogue.js"></script>
   <script defer src="core.js"></script>
+  <script defer src="cutout.js"></script>
+  <script defer src="subject-assets.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -34,10 +36,11 @@
       <section id="import-panel" role="tabpanel" aria-labelledby="import-tab" hidden>
         <form id="import-form">
           <label class="upload-zone" id="upload-zone"><input id="subject-file" type="file" accept="image/png,image/jpeg,image/webp" hidden><span data-icon="image"></span><strong>Ajouter votre sujet</strong><span>Glissez une image ou <b>parcourir</b></span><small>PNG, JPG ou WebP · 15 Mo max.</small></label>
-          <div id="import-preview-wrap" class="import-preview-wrap" hidden><img id="import-preview" alt="Aperçu du sujet importé"><button type="button" id="change-image" class="button tiny">Changer d’image</button></div>
-          <p class="field-hint">Le design de votre image est conservé. Un fond transparent offre le meilleur résultat.</p>
-          <label class="check-row"><input id="remove-background" type="checkbox"> Retirer un fond uni</label>
-          <label id="tolerance-field" class="field" hidden>Tolérance du fond <input id="background-tolerance" type="range" min="5" max="100" value="28"><span class="field-hint">Pour un fond uni connecté aux bords. Les photos complexes nécessitent un détourage préalable.</span></label>
+          <div id="import-preview-wrap" class="import-preview-wrap" hidden><div class="preview-stage"><img id="import-preview" alt="Aperçu du sujet importé"><span id="cutout-working" class="cutout-working" hidden>Analyse de l’image…</span></div><div class="preview-actions"><button type="button" id="toggle-cutout" class="button tiny">Voir l’original</button><button type="button" id="change-image" class="button tiny">Changer d’image</button></div></div>
+          <p class="field-hint">Le sujet est détouré automatiquement sur votre appareil. Rien n’est envoyé en ligne.</p>
+          <label class="check-row cutout-switch"><input id="remove-background" type="checkbox" checked> Détourage automatique</label>
+          <label id="tolerance-field" class="field">Précision du détourage <span class="range-row"><input id="background-tolerance" type="range" min="10" max="90" value="55"><output id="cutout-strength">55</output></span><span class="field-hint">Augmentez pour retirer davantage de fond, réduisez si une partie du sujet disparaît. Idéal quand le fond se distingue du sujet.</span></label>
+          <p id="cutout-status" class="cutout-status" role="status"></p>
           <label class="field">Nom du sujet<input id="import-name" required maxlength="60" placeholder="Ex. Aline, le dragon, le château…"></label>
           <label class="field">Nature<select id="import-nature"><option value="human">Humain / personnage</option><option value="animal">Animal</option><option value="creature">Créature</option><option value="vehicle">Véhicule</option><option value="building">Bâtiment / monument</option><option value="object">Autre objet</option></select></label>
           <label class="field">Dimension mesurée<select id="import-axis"><option value="height">Hauteur</option><option value="width">Longueur / largeur</option></select></label>

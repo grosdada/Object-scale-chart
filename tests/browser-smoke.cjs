@@ -19,6 +19,7 @@ const assert=require('node:assert/strict');
   await page.locator('#undo-button').click();assert.equal(await page.locator('#edit-size').inputValue(),'1.8');
   await page.locator('#search').fill('Pétrolier');await page.getByRole('button',{name:'Ajouter Pétrolier',exact:true}).click();
   assert.equal(await page.locator('.scene-row').count(),4);assert.match(await page.locator('#prompt-output').inputValue(),/length \/ width 330 m/);
+  assert.match(await page.locator('.subject').last().locator('image').getAttribute('href'),/^data:image\/png;base64,/);
   const chart=await page.locator('#board').evaluate(el=>({width:el.viewBox.baseVal.width,subjects:[...el.querySelectorAll('g.subject')].map(g=>({name:g.querySelector('title').textContent,w:+g.querySelector('svg').getAttribute('width'),h:+g.querySelector('svg').getAttribute('height')}))}));
   assert.ok(Math.abs(chart.subjects[3].w/chart.subjects[0].h-330/1.8)<1e-8);
   await page.screenshot({path:'test-results/tanker.png',fullPage:true});
@@ -38,8 +39,8 @@ const assert=require('node:assert/strict');
   // Raster fixture with an opaque background and a tall subject, then local background removal.
   const pngBuffer=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=100;c.height=200;const x=c.getContext('2d');x.fillStyle='white';x.fillRect(0,0,100,200);x.fillStyle='#ff4500';x.fillRect(35,20,30,160);return c.toDataURL().split(',')[1];});
   fs.writeFileSync('test-results/subject.png',Buffer.from(pngBuffer,'base64'));
-  await page.locator('#import-tab').click();await page.locator('#subject-file').setInputFiles('test-results/subject.png');await page.locator('#add-import').waitFor({state:'visible'});await page.locator('#remove-background').check();
-  await page.waitForFunction(()=>!document.getElementById('add-import').disabled);
+  await page.locator('#import-tab').click();await page.locator('#subject-file').setInputFiles('test-results/subject.png');await page.locator('#add-import').waitFor({state:'visible'});await page.waitForFunction(()=>document.getElementById('cutout-status').textContent.includes('Fond retiré'));
+  await page.waitForFunction(()=>!document.getElementById('add-import').disabled);assert.match(await page.locator('#cutout-status').textContent(),/Fond retiré/);
   await page.locator('#import-name').fill('Sujet importé');await page.locator('#import-size').fill('2');await page.locator('#add-import').click();
   assert.equal(await page.locator('.scene-row').count(),4);assert.match(await page.locator('#prompt-output').inputValue(),/Sujet importé/);
   const imported=await page.locator('#board image').evaluate(el=>({width:+el.getAttribute('width'),height:+el.getAttribute('height')}));assert.ok(Math.abs(imported.width/imported.height-30/160)<1e-6);

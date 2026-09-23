@@ -16,11 +16,11 @@ Les fichiers sont aussi utilisables sur un hébergement statique. Il est possibl
 
 ## Fonctionnalités
 
-- **136 presets SVG originaux** : 3 hommes et 3 femmes de corpulences différentes, 30 animaux, 50 véhicules et 50 bâtiments / monuments. Les modèles sont schématiques ; leurs dimensions sont des valeurs de travail indicatives, modifiables, pas des mesures certifiées de modèles commerciaux.
+- **136 presets** : 3 hommes et 3 femmes de corpulences différentes, 30 animaux, 50 véhicules et 50 bâtiments / monuments. Les planches Ideogram fournies ont été découpées et détourées localement ; 127 nouvelles silhouettes sont intégrées. La planche 01 reçue étant un doublon exact de la planche 02, les 6 humains, le chien, le chat et le gorille gardent temporairement leur SVG de secours. Les dimensions sont des valeurs de travail indicatives, modifiables, pas des mesures certifiées de modèles commerciaux.
 - **Une seule échelle physique** pour tous les sujets, en millimètres, centimètres, mètres ou kilomètres. Une grande construction ou un pétrolier adapte automatiquement le cadrage. Les éléments minuscules restent à leur vraie échelle et leurs étiquettes restent lisibles.
 - **Déplacement horizontal et redimensionnement avec poignées**, en conservant les proportions. Tous les sujets reposent sur le même plan au sol. La hauteur ou la longueur peut être renseignée précisément dans l’inspecteur. Les noms complets et dimensions figurent sous les images.
 - **Import PNG, JPEG et WebP** : nom, nature et dimension de référence. L’image d’origine représente le sujet, avec son vrai design. Les marges transparentes sont retirées pour que la taille corresponde au contenu visible. Choisissez hauteur ou longueur selon ce que mesure votre valeur.
-- **Retrait local d’un fond uni**, avec tolérance réglable. Cet outil retire les pixels proches des couleurs des coins, connectés aux bords. Il n’identifie pas sémantiquement les sujets et ne remplace pas un détourage de photo complexe. Préférez un PNG transparent ou une image déjà détourée.
+- **Détourage automatique local**, activé dès l’import, avec précision réglable et comparaison immédiate avec l’original. L’algorithme apprend plusieurs couleurs sur les quatre bords, retire uniquement le fond connecté au cadre, protège un sujet qui touche un seul bord et adoucit le contour. Il fonctionne bien lorsque le fond se distingue du sujet. Il n’utilise ni API, ni modèle téléchargé et ne prétend pas reconnaître sémantiquement une scène complexe ; pour ce cas, un PNG transparent reste la meilleure source.
 - **15 sujets humains au maximum** sur un tableau, avec jusqu’à 60 sujets au total.
 - **Couleurs du fond et des graduations indépendantes**, couleurs des silhouettes, thèmes clair / sombre / plan bleu, grille activable. Les mêmes réglages sont utilisés dans les exports.
 - **Prompt local, déterministe et modifiable**, en français ou en anglais : dimensions, ordre des sujets, référence de hauteur, rapports de proportion et maintien des dimensions pendant la vidéo. Possibilité d’ajouter une action / scène. Les destinations Seedance, MiniMax H3 et Wan 3 utilisent les mêmes instructions physiques universelles ; aucun appel à ces services n’est effectué. Le tableau et le prompt doivent être joints manuellement dans le générateur vidéo. Leur interprétation dépend de ce générateur.
@@ -32,7 +32,7 @@ Les dimensions secondaires sont déduites des proportions de la silhouette / ima
 
 ## Utilisation
 
-1. Cliquer sur une silhouette, ou la glisser sur le tableau. Pour une image personnelle, utiliser **Importer**.
+1. Cliquer sur une silhouette, ou la glisser sur le tableau. Pour une image personnelle, utiliser **Importer** : le détourage démarre automatiquement. Comparez avec l’original et ajustez la précision si nécessaire.
 2. Sélectionner un sujet et régler son nom, sa nature, sa taille, son unité et la dimension mesurée.
 3. Tirer une poignée supérieure pour redimensionner ou glisser le sujet horizontalement. **Aligner** redistribue les sujets ; **Ajuster** recadre le tableau. Après un zoom, glisser le fond pour naviguer horizontalement.
 4. Le bouton palette ouvre les couleurs du fond et des graduations. Les couleurs personnalisées sont sauvegardées avec le projet.
@@ -65,7 +65,11 @@ node tests/browser-smoke.cjs
 - `app.js` : interactions, import local, export, sauvegarde.
 - `catalogue.js` : 136 presets et dimensions initiales.
 - `shapes.js` : tracés SVG des silhouettes.
+- `subject-assets.js` : masques PNG intégrés des silhouettes générées, recolorés par l’application.
+- `assets/source-grids/`, `assets/subjects/` : planches originales, découpes transparentes et manifeste de correspondance.
+- `scripts/process_subject_grids.py` : traitement reproductible des grilles 3 × 3.
 - `core.js` : mesures, mise à l’échelle, étiquettes, prompt et validation des projets.
 - `server.cjs` : serveur statique local, sans dépendances.
+- `ideogram-prompts.html` : 16 prompts en grilles 3 × 3 pour régénérer les 136 silhouettes dans un style cohérent.
 
 Aucun fichier utilisateur n’est envoyé sur un serveur. Aucun CDN, service de police, outil d’analyse ou SDK IA n’est utilisé.
