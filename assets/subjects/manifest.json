@@ -3,55 +3,82 @@
     "grid": 1,
     "position": 1,
     "presetId": "human-1",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-1.png",
+    "width": 93,
+    "height": 281
   },
   {
     "grid": 1,
     "position": 2,
     "presetId": "human-2",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-2.png",
+    "width": 99,
+    "height": 282
   },
   {
     "grid": 1,
     "position": 3,
     "presetId": "human-3",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-3.png",
+    "width": 137,
+    "height": 281
   },
   {
     "grid": 1,
     "position": 4,
     "presetId": "human-4",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-4.png",
+    "width": 73,
+    "height": 278
   },
   {
     "grid": 1,
     "position": 5,
     "presetId": "human-5",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-5.png",
+    "width": 94,
+    "height": 277
   },
   {
     "grid": 1,
     "position": 6,
     "presetId": "human-6",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/human-6.png",
+    "width": 121,
+    "height": 278
   },
   {
     "grid": 1,
     "position": 7,
     "presetId": "animal-7",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-7.png",
+    "width": 239,
+    "height": 172
   },
   {
     "grid": 1,
     "position": 8,
     "presetId": "animal-8",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-8.png",
+    "width": 109,
+    "height": 147
   },
   {
     "grid": 1,
     "position": 9,
     "presetId": "animal-9",
-    "status": "missing_duplicate_grid"
+    "status": "processed",
+    "file": "assets/subjects/presets/animal-9.png",
+    "width": 184,
+    "height": 178
   },
   {
     "grid": 2,
@@ -59,8 +86,8 @@
     "presetId": "animal-10",
     "status": "processed",
     "file": "assets/subjects/presets/animal-10.png",
-    "width": 242,
-    "height": 183
+    "width": 226,
+    "height": 167
   },
   {
     "grid": 2,
@@ -68,8 +95,8 @@
     "presetId": "animal-11",
     "status": "processed",
     "file": "assets/subjects/presets/animal-11.png",
-    "width": 176,
-    "height": 283
+    "width": 158,
+    "height": 265
   },
   {
     "grid": 2,
@@ -77,8 +104,8 @@
     "presetId": "animal-12",
     "status": "processed",
     "file": "assets/subjects/presets/animal-12.png",
-    "width": 249,
-    "height": 156
+    "width": 233,
+    "height": 140
   },
   {
     "grid": 2,
@@ -86,8 +113,8 @@
     "presetId": "animal-13",
     "status": "processed",
     "file": "assets/subjects/presets/animal-13.png",
-    "width": 271,
-    "height": 133
+    "width": 253,
+    "height": 115
   },
   {
     "grid": 2,
@@ -95,8 +122,8 @@
     "presetId": "animal-14",
     "status": "processed",
     "file": "assets/subjects/presets/animal-14.png",
-    "width": 247,
-    "height": 155
+    "width": 231,
+    "height": 139
   },
   {
     "grid": 2,
@@ -104,8 +131,8 @@
     "presetId": "animal-15",
     "status": "processed",
     "file": "assets/subjects/presets/animal-15.png",
-    "width": 236,
-    "height": 146
+    "width": 220,
+    "height": 130
   },
   {
     "grid": 2,
@@ -113,8 +140,8 @@
     "presetId": "animal-16",
     "status": "processed",
     "file": "assets/subjects/presets/animal-16.png",
-    "width": 252,
-    "height": 126
+    "width": 236,
+    "height": 110
   },
   {
     "grid": 2,
@@ -122,8 +149,8 @@
     "presetId": "animal-17",
     "status": "processed",
     "file": "assets/subjects/presets/animal-17.png",
-    "width": 246,
-    "height": 213
+    "width": 230,
+    "height": 197
   },
   {
     "grid": 2,
@@ -131,8 +158,8 @@
     "presetId": "animal-18",
     "status": "processed",
     "file": "assets/subjects/presets/animal-18.png",
-    "width": 210,
-    "height": 184
+    "width": 196,
+    "height": 170
   },
   {
     "grid": 3,
@@ -140,8 +167,8 @@
     "presetId": "animal-19",
     "status": "processed",
     "file": "assets/subjects/presets/animal-19.png",
-    "width": 262,
-    "height": 149
+    "width": 244,
+    "height": 131
   },
   {
     "grid": 3,
@@ -149,8 +176,8 @@
     "presetId": "animal-20",
     "status": "processed",
     "file": "assets/subjects/presets/animal-20.png",
-    "width": 187,
-    "height": 142
+    "width": 175,
+    "height": 130
   },
   {
     "grid": 3,
@@ -158,8 +185,8 @@
     "presetId": "animal-21",
     "status": "processed",
     "file": "assets/subjects/presets/animal-21.png",
-    "width": 189,
-    "height": 179
+    "width": 177,
+    "height": 167
   },
   {
     "grid": 3,
@@ -167,8 +194,8 @@
     "presetId": "animal-22",
     "status": "processed",
     "file": "assets/subjects/presets/animal-22.png",
-    "width": 228,
-    "height": 116
+    "width": 214,
+    "height": 102
   },
   {
     "grid": 3,
@@ -176,8 +203,8 @@
     "presetId": "animal-23",
     "status": "processed",
     "file": "assets/subjects/presets/animal-23.png",
-    "width": 155,
-    "height": 198
+    "width": 143,
+    "height": 186
   },
   {
     "grid": 3,
@@ -185,8 +212,8 @@
     "presetId": "animal-24",
     "status": "processed",
     "file": "assets/subjects/presets/animal-24.png",
-    "width": 265,
-    "height": 125
+    "width": 247,
+    "height": 107
   },
   {
     "grid": 3,
@@ -194,8 +221,8 @@
     "presetId": "animal-25",
     "status": "processed",
     "file": "assets/subjects/presets/animal-25.png",
-    "width": 266,
-    "height": 126
+    "width": 248,
+    "height": 108
   },
   {
     "grid": 3,
@@ -203,8 +230,8 @@
     "presetId": "animal-26",
     "status": "processed",
     "file": "assets/subjects/presets/animal-26.png",
-    "width": 225,
-    "height": 197
+    "width": 211,
+    "height": 183
   },
   {
     "grid": 3,
@@ -212,8 +239,8 @@
     "presetId": "animal-27",
     "status": "processed",
     "file": "assets/subjects/presets/animal-27.png",
-    "width": 145,
-    "height": 154
+    "width": 135,
+    "height": 144
   },
   {
     "grid": 4,
@@ -221,8 +248,8 @@
     "presetId": "animal-28",
     "status": "processed",
     "file": "assets/subjects/presets/animal-28.png",
-    "width": 183,
-    "height": 180
+    "width": 171,
+    "height": 168
   },
   {
     "grid": 4,
@@ -230,8 +257,8 @@
     "presetId": "animal-29",
     "status": "processed",
     "file": "assets/subjects/presets/animal-29.png",
-    "width": 162,
-    "height": 122
+    "width": 152,
+    "height": 112
   },
   {
     "grid": 4,
@@ -239,8 +266,8 @@
     "presetId": "animal-30",
     "status": "processed",
     "file": "assets/subjects/presets/animal-30.png",
-    "width": 250,
-    "height": 75
+    "width": 234,
+    "height": 59
   },
   {
     "grid": 4,
@@ -248,8 +275,8 @@
     "presetId": "animal-31",
     "status": "processed",
     "file": "assets/subjects/presets/animal-31.png",
-    "width": 176,
-    "height": 114
+    "width": 164,
+    "height": 102
   },
   {
     "grid": 4,
@@ -257,8 +284,8 @@
     "presetId": "animal-32",
     "status": "processed",
     "file": "assets/subjects/presets/animal-32.png",
-    "width": 270,
-    "height": 149
+    "width": 252,
+    "height": 131
   },
   {
     "grid": 4,
@@ -266,8 +293,8 @@
     "presetId": "animal-33",
     "status": "processed",
     "file": "assets/subjects/presets/animal-33.png",
-    "width": 127,
-    "height": 210
+    "width": 113,
+    "height": 196
   },
   {
     "grid": 4,
@@ -275,8 +302,8 @@
     "presetId": "animal-34",
     "status": "processed",
     "file": "assets/subjects/presets/animal-34.png",
-    "width": 96,
-    "height": 184
+    "width": 84,
+    "height": 172
   },
   {
     "grid": 4,
@@ -284,8 +311,8 @@
     "presetId": "animal-35",
     "status": "processed",
     "file": "assets/subjects/presets/animal-35.png",
-    "width": 219,
-    "height": 133
+    "width": 205,
+    "height": 119
   },
   {
     "grid": 4,
@@ -293,8 +320,8 @@
     "presetId": "animal-36",
     "status": "processed",
     "file": "assets/subjects/presets/animal-36.png",
-    "width": 256,
-    "height": 115
+    "width": 240,
+    "height": 99
   },
   {
     "grid": 5,
@@ -302,8 +329,8 @@
     "presetId": "vehicle-37",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-37.png",
-    "width": 178,
-    "height": 89
+    "width": 166,
+    "height": 77
   },
   {
     "grid": 5,
@@ -311,8 +338,8 @@
     "presetId": "vehicle-38",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-38.png",
-    "width": 190,
-    "height": 91
+    "width": 178,
+    "height": 79
   },
   {
     "grid": 5,
@@ -320,8 +347,8 @@
     "presetId": "vehicle-39",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-39.png",
-    "width": 244,
-    "height": 93
+    "width": 228,
+    "height": 77
   },
   {
     "grid": 5,
@@ -329,8 +356,8 @@
     "presetId": "vehicle-40",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-40.png",
-    "width": 237,
-    "height": 94
+    "width": 221,
+    "height": 78
   },
   {
     "grid": 5,
@@ -338,8 +365,8 @@
     "presetId": "vehicle-41",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-41.png",
-    "width": 240,
-    "height": 90
+    "width": 224,
+    "height": 74
   },
   {
     "grid": 5,
@@ -347,8 +374,8 @@
     "presetId": "vehicle-42",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-42.png",
-    "width": 237,
-    "height": 94
+    "width": 221,
+    "height": 78
   },
   {
     "grid": 5,
@@ -356,8 +383,8 @@
     "presetId": "vehicle-43",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-43.png",
-    "width": 223,
-    "height": 112
+    "width": 209,
+    "height": 98
   },
   {
     "grid": 5,
@@ -365,8 +392,8 @@
     "presetId": "vehicle-44",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-44.png",
-    "width": 206,
-    "height": 111
+    "width": 192,
+    "height": 97
   },
   {
     "grid": 5,
@@ -374,8 +401,8 @@
     "presetId": "vehicle-45",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-45.png",
-    "width": 241,
-    "height": 105
+    "width": 225,
+    "height": 89
   },
   {
     "grid": 6,
@@ -383,8 +410,8 @@
     "presetId": "vehicle-46",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-46.png",
-    "width": 211,
-    "height": 106
+    "width": 197,
+    "height": 92
   },
   {
     "grid": 6,
@@ -392,8 +419,8 @@
     "presetId": "vehicle-47",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-47.png",
-    "width": 204,
-    "height": 125
+    "width": 190,
+    "height": 111
   },
   {
     "grid": 6,
@@ -401,8 +428,8 @@
     "presetId": "vehicle-48",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-48.png",
-    "width": 272,
-    "height": 72
+    "width": 254,
+    "height": 54
   },
   {
     "grid": 6,
@@ -410,8 +437,8 @@
     "presetId": "vehicle-49",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-49.png",
-    "width": 184,
-    "height": 120
+    "width": 172,
+    "height": 108
   },
   {
     "grid": 6,
@@ -419,8 +446,8 @@
     "presetId": "vehicle-50",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-50.png",
-    "width": 182,
-    "height": 106
+    "width": 170,
+    "height": 94
   },
   {
     "grid": 6,
@@ -428,8 +455,8 @@
     "presetId": "vehicle-51",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-51.png",
-    "width": 204,
-    "height": 110
+    "width": 190,
+    "height": 96
   },
   {
     "grid": 6,
@@ -437,8 +464,8 @@
     "presetId": "vehicle-52",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-52.png",
-    "width": 197,
-    "height": 120
+    "width": 185,
+    "height": 108
   },
   {
     "grid": 6,
@@ -446,8 +473,8 @@
     "presetId": "vehicle-53",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-53.png",
-    "width": 175,
-    "height": 126
+    "width": 163,
+    "height": 114
   },
   {
     "grid": 6,
@@ -455,8 +482,8 @@
     "presetId": "vehicle-54",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-54.png",
-    "width": 155,
-    "height": 117
+    "width": 145,
+    "height": 107
   },
   {
     "grid": 7,
@@ -464,8 +491,8 @@
     "presetId": "vehicle-55",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-55.png",
-    "width": 218,
-    "height": 143
+    "width": 204,
+    "height": 129
   },
   {
     "grid": 7,
@@ -473,8 +500,8 @@
     "presetId": "vehicle-56",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-56.png",
-    "width": 241,
-    "height": 151
+    "width": 225,
+    "height": 135
   },
   {
     "grid": 7,
@@ -482,8 +509,8 @@
     "presetId": "vehicle-57",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-57.png",
-    "width": 225,
-    "height": 142
+    "width": 211,
+    "height": 128
   },
   {
     "grid": 7,
@@ -491,8 +518,8 @@
     "presetId": "vehicle-58",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-58.png",
-    "width": 214,
-    "height": 145
+    "width": 200,
+    "height": 131
   },
   {
     "grid": 7,
@@ -500,8 +527,8 @@
     "presetId": "vehicle-59",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-59.png",
-    "width": 258,
-    "height": 69
+    "width": 242,
+    "height": 53
   },
   {
     "grid": 7,
@@ -509,8 +536,8 @@
     "presetId": "vehicle-60",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-60.png",
-    "width": 262,
-    "height": 103
+    "width": 244,
+    "height": 85
   },
   {
     "grid": 7,
@@ -518,8 +545,8 @@
     "presetId": "vehicle-61",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-61.png",
-    "width": 176,
-    "height": 193
+    "width": 164,
+    "height": 181
   },
   {
     "grid": 7,
@@ -527,8 +554,8 @@
     "presetId": "vehicle-62",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-62.png",
-    "width": 214,
-    "height": 187
+    "width": 200,
+    "height": 173
   },
   {
     "grid": 7,
@@ -536,8 +563,8 @@
     "presetId": "vehicle-63",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-63.png",
-    "width": 267,
-    "height": 113
+    "width": 249,
+    "height": 95
   },
   {
     "grid": 8,
@@ -545,8 +572,8 @@
     "presetId": "vehicle-64",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-64.png",
-    "width": 258,
-    "height": 100
+    "width": 242,
+    "height": 84
   },
   {
     "grid": 8,
@@ -554,8 +581,8 @@
     "presetId": "vehicle-65",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-65.png",
-    "width": 266,
-    "height": 89
+    "width": 248,
+    "height": 71
   },
   {
     "grid": 8,
@@ -563,8 +590,8 @@
     "presetId": "vehicle-66",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-66.png",
-    "width": 256,
-    "height": 81
+    "width": 240,
+    "height": 65
   },
   {
     "grid": 8,
@@ -572,8 +599,8 @@
     "presetId": "vehicle-67",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-67.png",
-    "width": 229,
-    "height": 223
+    "width": 215,
+    "height": 58
   },
   {
     "grid": 8,
@@ -581,8 +608,8 @@
     "presetId": "vehicle-68",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-68.png",
-    "width": 326,
-    "height": 231
+    "width": 253,
+    "height": 55
   },
   {
     "grid": 8,
@@ -590,8 +617,8 @@
     "presetId": "vehicle-69",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-69.png",
-    "width": 279,
-    "height": 233
+    "width": 180,
+    "height": 61
   },
   {
     "grid": 8,
@@ -599,8 +626,8 @@
     "presetId": "vehicle-70",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-70.png",
-    "width": 195,
-    "height": 67
+    "width": 183,
+    "height": 55
   },
   {
     "grid": 8,
@@ -608,8 +635,8 @@
     "presetId": "vehicle-71",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-71.png",
-    "width": 191,
-    "height": 62
+    "width": 179,
+    "height": 50
   },
   {
     "grid": 8,
@@ -617,8 +644,8 @@
     "presetId": "vehicle-72",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-72.png",
-    "width": 198,
-    "height": 73
+    "width": 186,
+    "height": 61
   },
   {
     "grid": 9,
@@ -626,8 +653,8 @@
     "presetId": "vehicle-73",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-73.png",
-    "width": 253,
-    "height": 98
+    "width": 237,
+    "height": 82
   },
   {
     "grid": 9,
@@ -635,8 +662,8 @@
     "presetId": "vehicle-74",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-74.png",
-    "width": 282,
-    "height": 110
+    "width": 264,
+    "height": 92
   },
   {
     "grid": 9,
@@ -644,8 +671,8 @@
     "presetId": "vehicle-75",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-75.png",
-    "width": 243,
-    "height": 80
+    "width": 227,
+    "height": 64
   },
   {
     "grid": 9,
@@ -653,8 +680,8 @@
     "presetId": "vehicle-76",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-76.png",
-    "width": 239,
-    "height": 85
+    "width": 223,
+    "height": 69
   },
   {
     "grid": 9,
@@ -662,8 +689,8 @@
     "presetId": "vehicle-77",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-77.png",
-    "width": 227,
-    "height": 85
+    "width": 213,
+    "height": 71
   },
   {
     "grid": 9,
@@ -671,8 +698,8 @@
     "presetId": "vehicle-78",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-78.png",
-    "width": 217,
-    "height": 95
+    "width": 203,
+    "height": 81
   },
   {
     "grid": 9,
@@ -680,8 +707,8 @@
     "presetId": "vehicle-79",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-79.png",
-    "width": 241,
-    "height": 89
+    "width": 225,
+    "height": 73
   },
   {
     "grid": 9,
@@ -689,8 +716,8 @@
     "presetId": "vehicle-80",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-80.png",
-    "width": 248,
-    "height": 95
+    "width": 232,
+    "height": 79
   },
   {
     "grid": 9,
@@ -698,8 +725,8 @@
     "presetId": "vehicle-81",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-81.png",
-    "width": 211,
-    "height": 102
+    "width": 197,
+    "height": 88
   },
   {
     "grid": 10,
@@ -707,8 +734,8 @@
     "presetId": "vehicle-82",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-82.png",
-    "width": 285,
-    "height": 118
+    "width": 267,
+    "height": 100
   },
   {
     "grid": 10,
@@ -716,8 +743,8 @@
     "presetId": "vehicle-83",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-83.png",
-    "width": 244,
-    "height": 110
+    "width": 228,
+    "height": 94
   },
   {
     "grid": 10,
@@ -725,8 +752,8 @@
     "presetId": "vehicle-84",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-84.png",
-    "width": 297,
-    "height": 71
+    "width": 277,
+    "height": 51
   },
   {
     "grid": 10,
@@ -734,8 +761,8 @@
     "presetId": "vehicle-85",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-85.png",
-    "width": 274,
-    "height": 96
+    "width": 256,
+    "height": 78
   },
   {
     "grid": 10,
@@ -743,8 +770,8 @@
     "presetId": "vehicle-86",
     "status": "processed",
     "file": "assets/subjects/presets/vehicle-86.png",
-    "width": 248,
-    "height": 123
+    "width": 232,
+    "height": 107
   },
   {
     "grid": 10,
@@ -752,8 +779,8 @@
     "presetId": "extra-minibus",
     "status": "processed",
     "file": "assets/subjects/extras/extra-minibus.png",
-    "width": 222,
-    "height": 94
+    "width": 208,
+    "height": 80
   },
   {
     "grid": 10,
@@ -761,8 +788,8 @@
     "presetId": "extra-mobile-crane",
     "status": "processed",
     "file": "assets/subjects/extras/extra-mobile-crane.png",
-    "width": 240,
-    "height": 101
+    "width": 224,
+    "height": 85
   },
   {
     "grid": 10,
@@ -770,8 +797,8 @@
     "presetId": "extra-tank",
     "status": "processed",
     "file": "assets/subjects/extras/extra-tank.png",
-    "width": 252,
-    "height": 114
+    "width": 236,
+    "height": 98
   },
   {
     "grid": 10,
@@ -779,8 +806,8 @@
     "presetId": "extra-submarine",
     "status": "processed",
     "file": "assets/subjects/extras/extra-submarine.png",
-    "width": 272,
-    "height": 135
+    "width": 254,
+    "height": 117
   },
   {
     "grid": 11,
@@ -788,8 +815,8 @@
     "presetId": "building-87",
     "status": "processed",
     "file": "assets/subjects/presets/building-87.png",
-    "width": 160,
-    "height": 128
+    "width": 150,
+    "height": 118
   },
   {
     "grid": 11,
@@ -797,8 +824,8 @@
     "presetId": "building-88",
     "status": "processed",
     "file": "assets/subjects/presets/building-88.png",
-    "width": 174,
-    "height": 171
+    "width": 161,
+    "height": 159
   },
   {
     "grid": 11,
@@ -806,8 +833,8 @@
     "presetId": "building-89",
     "status": "processed",
     "file": "assets/subjects/presets/building-89.png",
-    "width": 214,
-    "height": 96
+    "width": 200,
+    "height": 82
   },
   {
     "grid": 11,
@@ -815,8 +842,8 @@
     "presetId": "building-90",
     "status": "processed",
     "file": "assets/subjects/presets/building-90.png",
-    "width": 217,
-    "height": 128
+    "width": 203,
+    "height": 114
   },
   {
     "grid": 11,
@@ -824,8 +851,8 @@
     "presetId": "building-91",
     "status": "processed",
     "file": "assets/subjects/presets/building-91.png",
-    "width": 208,
-    "height": 113
+    "width": 194,
+    "height": 99
   },
   {
     "grid": 11,
@@ -833,8 +860,8 @@
     "presetId": "building-92",
     "status": "processed",
     "file": "assets/subjects/presets/building-92.png",
-    "width": 100,
-    "height": 203
+    "width": 86,
+    "height": 189
   },
   {
     "grid": 11,
@@ -842,8 +869,8 @@
     "presetId": "building-93",
     "status": "processed",
     "file": "assets/subjects/presets/building-93.png",
-    "width": 167,
-    "height": 160
+    "width": 157,
+    "height": 150
   },
   {
     "grid": 11,
@@ -851,8 +878,8 @@
     "presetId": "building-94",
     "status": "processed",
     "file": "assets/subjects/presets/building-94.png",
-    "width": 226,
-    "height": 97
+    "width": 212,
+    "height": 83
   },
   {
     "grid": 11,
@@ -860,8 +887,8 @@
     "presetId": "building-95",
     "status": "processed",
     "file": "assets/subjects/presets/building-95.png",
-    "width": 113,
-    "height": 183
+    "width": 101,
+    "height": 171
   },
   {
     "grid": 12,
@@ -869,8 +896,8 @@
     "presetId": "building-96",
     "status": "processed",
     "file": "assets/subjects/presets/building-96.png",
-    "width": 129,
-    "height": 152
+    "width": 119,
+    "height": 142
   },
   {
     "grid": 12,
@@ -878,8 +905,8 @@
     "presetId": "building-97",
     "status": "processed",
     "file": "assets/subjects/presets/building-97.png",
-    "width": 119,
-    "height": 180
+    "width": 107,
+    "height": 168
   },
   {
     "grid": 12,
@@ -887,8 +914,8 @@
     "presetId": "building-98",
     "status": "processed",
     "file": "assets/subjects/presets/building-98.png",
-    "width": 82,
-    "height": 186
+    "width": 63,
+    "height": 174
   },
   {
     "grid": 12,
@@ -896,8 +923,8 @@
     "presetId": "building-99",
     "status": "processed",
     "file": "assets/subjects/presets/building-99.png",
-    "width": 115,
-    "height": 179
+    "width": 103,
+    "height": 167
   },
   {
     "grid": 12,
@@ -905,8 +932,8 @@
     "presetId": "building-100",
     "status": "processed",
     "file": "assets/subjects/presets/building-100.png",
-    "width": 104,
-    "height": 191
+    "width": 92,
+    "height": 179
   },
   {
     "grid": 12,
@@ -914,8 +941,8 @@
     "presetId": "building-101",
     "status": "processed",
     "file": "assets/subjects/presets/building-101.png",
-    "width": 43,
-    "height": 196
+    "width": 31,
+    "height": 184
   },
   {
     "grid": 12,
@@ -923,8 +950,8 @@
     "presetId": "building-102",
     "status": "processed",
     "file": "assets/subjects/presets/building-102.png",
-    "width": 108,
-    "height": 174
+    "width": 96,
+    "height": 162
   },
   {
     "grid": 12,
@@ -932,8 +959,8 @@
     "presetId": "building-103",
     "status": "processed",
     "file": "assets/subjects/presets/building-103.png",
-    "width": 116,
-    "height": 184
+    "width": 104,
+    "height": 172
   },
   {
     "grid": 12,
@@ -941,8 +968,8 @@
     "presetId": "building-104",
     "status": "processed",
     "file": "assets/subjects/presets/building-104.png",
-    "width": 80,
-    "height": 195
+    "width": 62,
+    "height": 183
   },
   {
     "grid": 13,
@@ -950,8 +977,8 @@
     "presetId": "building-105",
     "status": "processed",
     "file": "assets/subjects/presets/building-105.png",
-    "width": 64,
-    "height": 234
+    "width": 48,
+    "height": 218
   },
   {
     "grid": 13,
@@ -959,8 +986,8 @@
     "presetId": "building-106",
     "status": "processed",
     "file": "assets/subjects/presets/building-106.png",
-    "width": 100,
-    "height": 234
+    "width": 84,
+    "height": 218
   },
   {
     "grid": 13,
@@ -968,8 +995,8 @@
     "presetId": "building-107",
     "status": "processed",
     "file": "assets/subjects/presets/building-107.png",
-    "width": 182,
-    "height": 91
+    "width": 170,
+    "height": 79
   },
   {
     "grid": 13,
@@ -977,8 +1004,8 @@
     "presetId": "building-108",
     "status": "processed",
     "file": "assets/subjects/presets/building-108.png",
-    "width": 229,
-    "height": 83
+    "width": 215,
+    "height": 69
   },
   {
     "grid": 13,
@@ -986,8 +1013,8 @@
     "presetId": "building-109",
     "status": "processed",
     "file": "assets/subjects/presets/building-109.png",
-    "width": 215,
-    "height": 103
+    "width": 201,
+    "height": 89
   },
   {
     "grid": 13,
@@ -995,8 +1022,8 @@
     "presetId": "building-110",
     "status": "processed",
     "file": "assets/subjects/presets/building-110.png",
-    "width": 166,
-    "height": 155
+    "width": 156,
+    "height": 145
   },
   {
     "grid": 13,
@@ -1004,8 +1031,8 @@
     "presetId": "building-111",
     "status": "processed",
     "file": "assets/subjects/presets/building-111.png",
-    "width": 205,
-    "height": 129
+    "width": 191,
+    "height": 115
   },
   {
     "grid": 13,
@@ -1013,8 +1040,8 @@
     "presetId": "building-112",
     "status": "processed",
     "file": "assets/subjects/presets/building-112.png",
-    "width": 86,
-    "height": 210
+    "width": 72,
+    "height": 196
   },
   {
     "grid": 13,
@@ -1022,8 +1049,8 @@
     "presetId": "building-113",
     "status": "processed",
     "file": "assets/subjects/presets/building-113.png",
-    "width": 45,
-    "height": 213
+    "width": 31,
+    "height": 199
   },
   {
     "grid": 14,
@@ -1031,8 +1058,8 @@
     "presetId": "building-114",
     "status": "processed",
     "file": "assets/subjects/presets/building-114.png",
-    "width": 165,
-    "height": 146
+    "width": 155,
+    "height": 136
   },
   {
     "grid": 14,
@@ -1040,8 +1067,8 @@
     "presetId": "building-115",
     "status": "processed",
     "file": "assets/subjects/presets/building-115.png",
-    "width": 172,
-    "height": 147
+    "width": 160,
+    "height": 135
   },
   {
     "grid": 14,
@@ -1049,8 +1076,8 @@
     "presetId": "building-116",
     "status": "processed",
     "file": "assets/subjects/presets/building-116.png",
-    "width": 208,
-    "height": 112
+    "width": 194,
+    "height": 98
   },
   {
     "grid": 14,
@@ -1058,8 +1085,8 @@
     "presetId": "building-117",
     "status": "processed",
     "file": "assets/subjects/presets/building-117.png",
-    "width": 153,
-    "height": 203
+    "width": 139,
+    "height": 189
   },
   {
     "grid": 14,
@@ -1067,8 +1094,8 @@
     "presetId": "building-118",
     "status": "processed",
     "file": "assets/subjects/presets/building-118.png",
-    "width": 144,
-    "height": 174
+    "width": 132,
+    "height": 162
   },
   {
     "grid": 14,
@@ -1076,8 +1103,8 @@
     "presetId": "building-119",
     "status": "processed",
     "file": "assets/subjects/presets/building-119.png",
-    "width": 173,
-    "height": 154
+    "width": 161,
+    "height": 142
   },
   {
     "grid": 14,
@@ -1085,8 +1112,8 @@
     "presetId": "building-120",
     "status": "processed",
     "file": "assets/subjects/presets/building-120.png",
-    "width": 181,
-    "height": 153
+    "width": 169,
+    "height": 141
   },
   {
     "grid": 14,
@@ -1094,8 +1121,8 @@
     "presetId": "building-121",
     "status": "processed",
     "file": "assets/subjects/presets/building-121.png",
-    "width": 144,
-    "height": 186
+    "width": 132,
+    "height": 174
   },
   {
     "grid": 14,
@@ -1103,8 +1130,8 @@
     "presetId": "building-122",
     "status": "processed",
     "file": "assets/subjects/presets/building-122.png",
-    "width": 117,
-    "height": 182
+    "width": 105,
+    "height": 170
   },
   {
     "grid": 15,
@@ -1112,8 +1139,8 @@
     "presetId": "building-123",
     "status": "processed",
     "file": "assets/subjects/presets/building-123.png",
-    "width": 119,
-    "height": 237
+    "width": 103,
+    "height": 221
   },
   {
     "grid": 15,
@@ -1121,8 +1148,8 @@
     "presetId": "building-124",
     "status": "processed",
     "file": "assets/subjects/presets/building-124.png",
-    "width": 157,
-    "height": 154
+    "width": 147,
+    "height": 144
   },
   {
     "grid": 15,
@@ -1130,8 +1157,8 @@
     "presetId": "building-125",
     "status": "processed",
     "file": "assets/subjects/presets/building-125.png",
-    "width": 208,
-    "height": 117
+    "width": 194,
+    "height": 103
   },
   {
     "grid": 15,
@@ -1139,8 +1166,8 @@
     "presetId": "building-126",
     "status": "processed",
     "file": "assets/subjects/presets/building-126.png",
-    "width": 335,
-    "height": 274
+    "width": 71,
+    "height": 186
   },
   {
     "grid": 15,
@@ -1148,8 +1175,8 @@
     "presetId": "building-127",
     "status": "processed",
     "file": "assets/subjects/presets/building-127.png",
-    "width": 283,
-    "height": 239
+    "width": 212,
+    "height": 90
   },
   {
     "grid": 15,
@@ -1157,8 +1184,8 @@
     "presetId": "building-128",
     "status": "processed",
     "file": "assets/subjects/presets/building-128.png",
-    "width": 335,
-    "height": 265
+    "width": 158,
+    "height": 170
   },
   {
     "grid": 15,
@@ -1166,8 +1193,8 @@
     "presetId": "building-129",
     "status": "processed",
     "file": "assets/subjects/presets/building-129.png",
-    "width": 208,
-    "height": 143
+    "width": 194,
+    "height": 129
   },
   {
     "grid": 15,
@@ -1175,8 +1202,8 @@
     "presetId": "building-130",
     "status": "processed",
     "file": "assets/subjects/presets/building-130.png",
-    "width": 131,
-    "height": 172
+    "width": 119,
+    "height": 160
   },
   {
     "grid": 15,
@@ -1184,8 +1211,8 @@
     "presetId": "building-131",
     "status": "processed",
     "file": "assets/subjects/presets/building-131.png",
-    "width": 203,
-    "height": 84
+    "width": 189,
+    "height": 70
   },
   {
     "grid": 16,
@@ -1193,8 +1220,8 @@
     "presetId": "building-132",
     "status": "processed",
     "file": "assets/subjects/presets/building-132.png",
-    "width": 252,
-    "height": 109
+    "width": 236,
+    "height": 93
   },
   {
     "grid": 16,
@@ -1202,8 +1229,8 @@
     "presetId": "building-133",
     "status": "processed",
     "file": "assets/subjects/presets/building-133.png",
-    "width": 248,
-    "height": 126
+    "width": 232,
+    "height": 110
   },
   {
     "grid": 16,
@@ -1211,8 +1238,8 @@
     "presetId": "building-134",
     "status": "processed",
     "file": "assets/subjects/presets/building-134.png",
-    "width": 259,
-    "height": 109
+    "width": 243,
+    "height": 93
   },
   {
     "grid": 16,
@@ -1220,8 +1247,8 @@
     "presetId": "building-135",
     "status": "processed",
     "file": "assets/subjects/presets/building-135.png",
-    "width": 140,
-    "height": 237
+    "width": 124,
+    "height": 221
   },
   {
     "grid": 16,
@@ -1229,8 +1256,8 @@
     "presetId": "building-136",
     "status": "processed",
     "file": "assets/subjects/presets/building-136.png",
-    "width": 71,
-    "height": 241
+    "width": 55,
+    "height": 225
   },
   {
     "grid": 16,
@@ -1238,8 +1265,8 @@
     "presetId": "extra-radio-telescope",
     "status": "processed",
     "file": "assets/subjects/extras/extra-radio-telescope.png",
-    "width": 142,
-    "height": 147
+    "width": 132,
+    "height": 137
   },
   {
     "grid": 16,
@@ -1247,8 +1274,8 @@
     "presetId": "extra-dam",
     "status": "processed",
     "file": "assets/subjects/extras/extra-dam.png",
-    "width": 203,
-    "height": 144
+    "width": 189,
+    "height": 130
   },
   {
     "grid": 16,
@@ -1256,8 +1283,8 @@
     "presetId": "extra-harbor-crane",
     "status": "processed",
     "file": "assets/subjects/extras/extra-harbor-crane.png",
-    "width": 188,
-    "height": 155
+    "width": 176,
+    "height": 143
   },
   {
     "grid": 16,
@@ -1265,7 +1292,7 @@
     "presetId": "extra-launch-tower",
     "status": "processed",
     "file": "assets/subjects/extras/extra-launch-tower.png",
-    "width": 113,
-    "height": 216
+    "width": 99,
+    "height": 202
   }
 ]

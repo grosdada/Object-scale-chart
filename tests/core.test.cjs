@@ -2,13 +2,12 @@ const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const C = require('../core.js');
 const catalogue = require('../catalogue.js');
-const Shapes = require('../shapes.js');
 const project = items => ({version:1,title:'Test',items,settings:{...C.defaults},promptOverride:null});
-test('catalogue: exact counts and unique original SVG presets',()=>{
+test('catalogue: exact counts and valid dimensions',()=>{
   assert.equal(catalogue.length,136);
   assert.deepEqual(catalogue.reduce((a,s)=>(a[s.category]=(a[s.category]||0)+1,a),{}),{human:6,animal:30,vehicle:50,building:50});
   assert.equal(new Set(catalogue.map(s=>s.id)).size,136);
-  for(const p of catalogue){assert.ok(p.width>0&&p.height>0);assert.ok(Shapes.markup(p).length>50);assert.ok(!Shapes.markup(p).includes('NaN'));}
+  for(const p of catalogue)assert.ok(p.width>0&&p.height>0);
 });
 test('one scale preserves human vs tanker dimensions across layout and resizing',()=>{
   const man=C.fromPreset(catalogue[1]),tanker=C.fromPreset(catalogue.find(p=>p.name==='Pétrolier'));

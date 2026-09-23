@@ -1,6 +1,6 @@
 # Échelle — Studio de proportions
 
-Une petite application en français pour préparer une référence de proportions pour une vidéo IA : **un tableau gradué + son prompt**, entièrement sur votre appareil, sans API, sans compte et sans dépendance à installer.
+Une application bilingue anglais/français pour préparer une référence de proportions pour une vidéo IA : **un tableau gradué + son prompt**, entièrement sur votre appareil, sans API ni compte.
 
 ## Lancer l’application
 
@@ -14,9 +14,15 @@ Ouvrir [http://127.0.0.1:4173](http://127.0.0.1:4173). Le serveur écoute unique
 
 Les fichiers sont aussi utilisables sur un hébergement statique. Il est possible d’ouvrir `index.html` directement ; la sauvegarde automatique et le presse-papiers dépendent alors des restrictions du navigateur. Le serveur local est recommandé.
 
+### Application Windows
+
+Téléchargez `Echelle-1.1.0-portable.exe` depuis la [dernière release GitHub](https://github.com/grosdada/Object-scale-chart/releases/latest). L’exécutable portable ne nécessite pas d’installation. Le bouton **Update / Mise à jour** compare sa version avec la dernière release du dépôt et ouvre directement le nouvel exécutable lorsqu’il existe.
+
 ## Fonctionnalités
 
-- **136 presets** : 3 hommes et 3 femmes de corpulences différentes, 30 animaux, 50 véhicules et 50 bâtiments / monuments. Les planches Ideogram fournies ont été découpées et détourées localement ; 127 nouvelles silhouettes sont intégrées. La planche 01 reçue étant un doublon exact de la planche 02, les 6 humains, le chien, le chat et le gorille gardent temporairement leur SVG de secours. Les dimensions sont des valeurs de travail indicatives, modifiables, pas des mesures certifiées de modèles commerciaux.
+- **136 presets générés et vectorisés** : 6 humains, 30 animaux, 50 véhicules et 50 bâtiments / monuments, tous issus des planches Ideogram fournies. Les cellules sont découpées, détourées puis converties avec Potrace en courbes SVG qui restent nettes à toute échelle. Aucun ancien tracé SVG n’est affiché. Les dimensions sont des valeurs de travail indicatives, modifiables, pas des mesures certifiées de modèles commerciaux.
+- **Alignement au sol précis** : les lignes réelles de chaque grille sont détectées, les pixels parasites sont retirés et chaque contour est recadré au dernier point visible avant vectorisation.
+- **Interface bilingue et deux thèmes** : anglais par défaut, bascule française EN/FR et thèmes Light gris pâle / Night. Les préférences restent enregistrées sur l’appareil.
 - **Une seule échelle physique** pour tous les sujets, en millimètres, centimètres, mètres ou kilomètres. Une grande construction ou un pétrolier adapte automatiquement le cadrage. Les éléments minuscules restent à leur vraie échelle et leurs étiquettes restent lisibles.
 - **Déplacement horizontal et redimensionnement avec poignées**, en conservant les proportions. Tous les sujets reposent sur le même plan au sol. La hauteur ou la longueur peut être renseignée précisément dans l’inspecteur. Les noms complets et dimensions figurent sous les images.
 - **Import PNG, JPEG et WebP** : nom, nature et dimension de référence. L’image d’origine représente le sujet, avec son vrai design. Les marges transparentes sont retirées pour que la taille corresponde au contenu visible. Choisissez hauteur ou longueur selon ce que mesure votre valeur.
@@ -59,15 +65,20 @@ Un parcours de navigateur est fourni dans `tests/browser-smoke.cjs`. Lancer d’
 node tests/browser-smoke.cjs
 ```
 
+Construire l’exécutable Windows portable :
+
+```sh
+npm run dist:win
+```
+
 ## Organisation
 
 - `index.html`, `styles.css` : interface responsive.
 - `app.js` : interactions, import local, export, sauvegarde.
-- `catalogue.js` : 136 presets et dimensions initiales.
-- `shapes.js` : tracés SVG des silhouettes.
-- `subject-assets.js` : masques PNG intégrés des silhouettes générées, recolorés par l’application.
-- `assets/source-grids/`, `assets/subjects/` : planches originales, découpes transparentes et manifeste de correspondance.
-- `scripts/process_subject_grids.py` : traitement reproductible des grilles 3 × 3.
+- `catalogue.js` : dimensions et métadonnées des 136 emplacements prévus ; l’interface ne montre que ceux possédant un nouvel asset.
+- `subject-vectors.js` : courbes SVG intégrées des silhouettes générées, recolorées par l’application.
+- `assets/source-grids/`, `assets/subjects/` : planches originales, découpes transparentes intermédiaires et manifeste de correspondance.
+- `scripts/process_subject_grids.py`, `scripts/vectorize_subjects.cjs` : détourage puis vectorisation reproductibles des grilles 3 × 3.
 - `core.js` : mesures, mise à l’échelle, étiquettes, prompt et validation des projets.
 - `server.cjs` : serveur statique local, sans dépendances.
 - `ideogram-prompts.html` : 16 prompts en grilles 3 × 3 pour régénérer les 136 silhouettes dans un style cohérent.

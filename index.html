@@ -8,23 +8,23 @@
   <title>Échelle — Studio de proportions</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%235651db'/%3E%3Cpath d='M11 29V11h6M11 17h5M11 23h5M23 29V17h6M23 23h5' stroke='white' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="shapes.js"></script>
   <script defer src="catalogue.js"></script>
   <script defer src="core.js"></script>
   <script defer src="cutout.js"></script>
-  <script defer src="subject-assets.js"></script>
+  <script defer src="subject-vectors.js"></script>
+  <script defer src="version.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
   <header class="app-header">
     <a class="brand" href="./" aria-label="Échelle, accueil"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 26V6h7M6 13h6M6 20h6M20 26V13h7M20 20h6"/></svg></span><span>échelle<span class="brand-dot">.</span></span></a>
     <span class="brand-description">Studio de proportions</span>
-    <div class="header-actions"><span id="save-status" class="save-status"><i></i> Enregistré sur cet appareil</span><button id="project-menu-button" class="button subtle" aria-expanded="false" aria-controls="project-menu">Projet <span data-icon="chevron"></span></button><button id="export-button" class="button primary"><span data-icon="download"></span> Exporter <span class="hide-small">la référence</span></button></div>
+    <div class="header-actions"><div class="ui-language" aria-label="Langue de l’interface"><button type="button" data-ui-language="en">EN</button><button type="button" data-ui-language="fr">FR</button></div><button id="ui-theme-toggle" class="button subtle ui-theme" type="button">Night</button><button id="update-button" class="button subtle update-button" type="button">Update</button><span id="save-status" class="save-status"><i></i> Enregistré sur cet appareil</span><button id="project-menu-button" class="button subtle" aria-expanded="false" aria-controls="project-menu">Projet <span data-icon="chevron"></span></button><button id="export-button" class="button primary"><span data-icon="download"></span> Exporter <span class="hide-small">la référence</span></button></div>
     <div id="project-menu" class="popover" hidden><button id="save-project"><span data-icon="download"></span> Enregistrer le projet (.json)</button><button id="load-project"><span data-icon="folder"></span> Ouvrir un projet</button><button id="new-project"><span data-icon="plus"></span> Nouveau tableau</button><button id="demo-project"><span data-icon="reset"></span> Charger la démonstration</button></div>
   </header>
   <main class="workspace">
     <aside class="library panel">
-      <div class="panel-heading"><h1>Vos sujets</h1><span class="count-badge">136 presets</span></div>
+      <div class="panel-heading"><h1>Vos sujets</h1><span id="preset-count" class="count-badge">127 presets</span></div>
       <div class="mode-tabs" role="tablist" aria-label="Source des sujets"><button id="preset-tab" class="active" role="tab" aria-selected="true" aria-controls="preset-panel"><span data-icon="grid"></span> Bibliothèque</button><button id="import-tab" role="tab" aria-selected="false" aria-controls="import-panel"><span data-icon="upload"></span> Importer</button></div>
       <section id="preset-panel" role="tabpanel" aria-labelledby="preset-tab">
         <label class="search-box"><span data-icon="search"></span><input id="search" type="search" placeholder="Chercher une silhouette…" aria-label="Chercher une silhouette"><kbd>/</kbd></label>

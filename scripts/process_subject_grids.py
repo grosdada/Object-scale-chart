@@ -1,7 +1,6 @@
 """Split the 3x3 Ideogram sheets into transparent subject masks used by the app."""
 from __future__ import annotations
 
-import base64
 import hashlib
 import json
 from pathlib import Path
@@ -55,12 +54,33 @@ def transparent_icon(cell: Image.Image) -> Image.Image:
     alpha[alpha < 190] = 0
     clear = max(6, round(min(w, h) * .025))
     alpha[:clear, :] = 0; alpha[-clear:, :] = 0; alpha[:, :clear] = 0; alpha[:, -clear:] = 0
+    # Remove isolated generation specks before calculating the tight ground-aligned bounds.
+    mask = alpha > 0
+    visited = np.zeros(mask.shape, dtype=bool)
+    minimum_component = max(12, round(mask.size * .00025))
+    for seed_y, seed_x in np.argwhere(mask):
+        if visited[seed_y, seed_x]:
+            continue
+        stack = [(int(seed_y), int(seed_x))]
+        visited[seed_y, seed_x] = True
+        component = []
+        while stack:
+            cy, cx = stack.pop()
+            component.append((cy, cx))
+            for ny in range(max(0, cy - 1), min(h, cy + 2)):
+                for nx in range(max(0, cx - 1), min(w, cx + 2)):
+                    if mask[ny, nx] and not visited[ny, nx]:
+                        visited[ny, nx] = True
+                        stack.append((ny, nx))
+        if len(component) < minimum_component:
+            yy, xx = zip(*component)
+            alpha[np.asarray(yy), np.asarray(xx)] = 0
     ys, xs = np.where(alpha > 18)
     if not len(xs):
         raise ValueError("No subject pixels detected")
-    pad = max(4, round(max(xs.max() - xs.min(), ys.max() - ys.min()) * .035))
-    x0, x1 = max(0, xs.min() - pad), min(w, xs.max() + pad + 1)
-    y0, y1 = max(0, ys.min() - pad), min(h, ys.max() + pad + 1)
+    # Tight bounds are intentional: the last visible pixel must sit on the chart ground line.
+    x0, x1 = xs.min(), xs.max() + 1
+    y0, y1 = ys.min(), ys.max() + 1
     alpha = alpha[y0:y1, x0:x1]
     # A single, neutral ink colour keeps PNGs compact; the app recolours SourceAlpha at render time.
     rgba = np.full((alpha.shape[0], alpha.shape[1], 4), 255, dtype=np.uint8)
@@ -72,6 +92,21 @@ def transparent_icon(cell: Image.Image) -> Image.Image:
 
 def sheet_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def divider_positions(image: Image.Image) -> tuple[list[int], list[int]]:
+    """Detect the two bright separators on each axis instead of assuming equal thirds."""
+    rgb = np.asarray(image.convert("RGB"), dtype=np.float32)
+    gray = rgb.mean(axis=2)
+    inset = max(24, round(min(image.size) * .05))
+    row_score = gray[:, inset:-inset].mean(axis=1)
+    column_score = gray[inset:-inset, :].mean(axis=0)
+
+    def peaks(score: np.ndarray, length: int) -> list[int]:
+        ranges = ((round(length * .24), round(length * .46)), (round(length * .54), round(length * .80)))
+        return [start + int(np.argmax(score[start:end])) for start, end in ranges]
+
+    return peaks(column_score, image.width), peaks(row_score, image.height)
 
 
 def build_preview(files: list[Path]) -> None:
@@ -118,10 +153,12 @@ def main() -> None:
         image = Image.open(source).convert("RGB")
         if image.size != (1024, 1024):
             raise ValueError(f"{source.name}: expected 1024x1024, found {image.size}")
+        vertical, horizontal = divider_positions(image)
+        x_edges, y_edges = [0, *vertical, image.width], [0, *horizontal, image.height]
         for position, preset_id in enumerate(GRID_SLOTS[grid]):
             row, column = divmod(position, 3)
-            left, right = round(column * image.width / 3) + 3, round((column + 1) * image.width / 3) - 3
-            top, bottom = round(row * image.height / 3) + 3, round((row + 1) * image.height / 3) - 3
+            left, right = x_edges[column] + 3, x_edges[column + 1] - 3
+            top, bottom = y_edges[row] + 3, y_edges[row + 1] - 3
             icon = transparent_icon(image.crop((left, top, right, bottom)))
             directory = OUTPUT / ("extras" if preset_id.startswith("extra-") else "presets")
             directory.mkdir(parents=True, exist_ok=True)
@@ -130,9 +167,7 @@ def main() -> None:
             manifest.append({"grid": grid, "position": position + 1, "presetId": preset_id, "status": "processed", "file": output.relative_to(ROOT).as_posix(), "width": icon.width, "height": icon.height})
 
     preset_files = sorted((OUTPUT / "presets").glob("*.png"))
-    assets = {path.stem: "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii") for path in preset_files}
     (OUTPUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (ROOT / "subject-assets.js").write_text("window.SUBJECT_ASSETS=" + json.dumps(assets, separators=(",", ":")) + ";\n", encoding="utf-8")
     build_preview(preset_files)
     print(f"Processed {len(preset_files)} catalogue presets and {len(list((OUTPUT / 'extras').glob('*.png')))} extras.")
     print(f"Preview: {PREVIEW}")

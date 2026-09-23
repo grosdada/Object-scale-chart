@@ -6,20 +6,20 @@ const vm = require('node:vm');
 
 const root = path.join(__dirname, '..');
 const sandbox = { window: {} };
-vm.runInNewContext(fs.readFileSync(path.join(root, 'subject-assets.js'), 'utf8'), sandbox);
-const assets = sandbox.window.SUBJECT_ASSETS;
+vm.runInNewContext(fs.readFileSync(path.join(root, 'subject-vectors.js'), 'utf8'), sandbox);
+const assets = sandbox.window.SUBJECT_VECTORS;
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'assets', 'subjects', 'manifest.json'), 'utf8'));
 
-test('processed subject bundle contains 127 catalogue masks', () => {
-  assert.equal(Object.keys(assets).length, 127);
+test('vector subject bundle contains all 136 catalogue silhouettes', () => {
+  assert.equal(Object.keys(assets).length, 136);
   for (const [id, source] of Object.entries(assets)) {
-    assert.match(id, /^(animal|vehicle|building)-\d+$/);
-    assert.match(source, /^data:image\/png;base64,[A-Za-z0-9+/=]+$/);
+    assert.match(id, /^(human|animal|vehicle|building)-\d+$/);
+    assert.match(source.viewBox, /^0 0 \d+ \d+$/);
+    assert.match(source.d, /^M /);
   }
 });
 
-test('only the duplicated first grid is missing', () => {
+test('no supplied grid cell is missing', () => {
   const missing = manifest.filter(item => item.status !== 'processed');
-  assert.deepEqual(missing.map(item => item.presetId), ['human-1','human-2','human-3','human-4','human-5','human-6','animal-7','animal-8','animal-9']);
-  assert.ok(missing.every(item => item.status === 'missing_duplicate_grid'));
+  assert.deepEqual(missing, []);
 });
