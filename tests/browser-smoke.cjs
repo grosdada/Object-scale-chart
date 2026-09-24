@@ -52,6 +52,11 @@ const assert=require('node:assert/strict');
   await page.waitForFunction(()=>!document.getElementById('add-import').disabled);assert.match(await page.locator('#cutout-status').textContent(),/Fond retiré/);
   await page.locator('#import-name').fill('Sujet importé');await page.locator('#import-size').fill('2');await page.locator('#add-import').click();
   assert.equal(await page.locator('.scene-row').count(),4);assert.match(await page.locator('#prompt-output').inputValue(),/Sujet importé/);
+  // Imported images move vertically on the chart so their visible base can be aligned with the ground.
+  const importedImage=page.locator('#board image');const importedBox=await importedImage.boundingBox();
+  await page.mouse.move(importedBox.x+importedBox.width/2,importedBox.y+importedBox.height/2);await page.mouse.down();await page.mouse.move(importedBox.x+importedBox.width/2,importedBox.y+importedBox.height/2+24,{steps:6});await page.mouse.up();
+  const draggedOffset=Number(await page.locator('#edit-offset-y').inputValue());assert.ok(draggedOffset>0,`expected positive ground offset after vertical drag, got ${draggedOffset}`);
+  await page.locator('#board .subject').last().focus();await page.locator('#board .subject').last().press('ArrowDown');assert.ok(Number(await page.locator('#edit-offset-y').inputValue())>draggedOffset);
   await page.locator('#my-tab').click();assert.equal(await page.locator('[data-personal]').count(),1);await page.locator('[data-personal]').click();assert.equal(await page.locator('.scene-row').count(),5);await page.locator('#undo-button').click();
   const imported=await page.locator('#board image').evaluate(el=>({width:+el.getAttribute('width'),height:+el.getAttribute('height')}));assert.ok(Math.abs(imported.width/imported.height-30/160)<1e-6);
   await page.waitForTimeout(800);await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.scene-row').length===4);assert.equal(await page.locator('#board image').count(),1);

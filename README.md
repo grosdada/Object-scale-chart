@@ -24,10 +24,10 @@ Téléchargez `Echelle-1.1.0-portable.exe` depuis la [dernière release GitHub](
 - **Alignement au sol précis** : les lignes réelles de chaque grille sont détectées, les pixels parasites sont retirés et chaque contour est recadré au dernier point visible avant vectorisation.
 - **Interface bilingue et deux thèmes** : anglais par défaut, bascule française EN/FR et thèmes Light gris pâle / Night. Les préférences restent enregistrées sur l’appareil.
 - **Une seule échelle physique** pour tous les sujets, en millimètres, centimètres, mètres ou kilomètres. Une grande construction ou un pétrolier adapte automatiquement le cadrage. Les éléments minuscules restent à leur vraie échelle et leurs étiquettes restent lisibles.
-- **Déplacement horizontal et redimensionnement avec poignées**, en conservant les proportions. Tous les sujets reposent sur le même plan au sol. La hauteur ou la longueur peut être renseignée précisément dans l’inspecteur. Les noms complets et dimensions figurent sous les images.
+- **Déplacement et redimensionnement avec poignées**, en conservant les proportions. Les presets se déplacent horizontalement sur le plan commun ; les images importées se déplacent aussi verticalement pour caler leur base visible sur le sol. La hauteur ou la longueur peut être renseignée précisément dans l’inspecteur. Les noms complets et dimensions figurent sous les images.
 - **Import PNG, JPEG et WebP** : nom, nature et dimension de référence. L’image d’origine représente le sujet, avec son vrai design. Les marges transparentes sont retirées pour que la taille corresponde au contenu visible. Choisissez hauteur ou longueur selon ce que mesure votre valeur.
 - **Détourage IA local**, activé dès l’import : IS-Net s’exécute avec ONNX Runtime sur l’ordinateur et traite correctement les scènes complexes où le sujet partage les couleurs du fond. Le modèle d’environ 40 Mo est téléchargé une fois depuis IMG.LY puis conservé en cache ; l’image n’est jamais envoyée. Un mode rapide fondé sur la couleur des bords reste disponible en secours.
-- **Calage vertical au sol** dans l’import et dans l’inspecteur, avec une ligne de référence. Le décalage est conservé dans le projet et dans la bibliothèque personnelle.
+- **Calage vertical au sol** dans l’import, dans l’inspecteur et directement sur le tableau par glisser ou avec `↑` / `↓`. Le décalage est conservé dans le projet et dans la bibliothèque personnelle.
 - **Bibliothèque “My subjects”** : enregistrez une image importée avec son nom, sa nature, sa taille, son axe de mesure et son calage. L’application Windows permet de choisir le dossier contenant `echelle-subjects.json`; la version navigateur utilise IndexedDB.
 - **15 sujets humains au maximum** sur un tableau, avec jusqu’à 60 sujets au total.
 - **Couleurs du fond et des graduations indépendantes**, couleurs des silhouettes, thèmes clair / sombre / plan bleu, grille activable. Les mêmes réglages sont utilisés dans les exports.
@@ -42,12 +42,12 @@ Les dimensions secondaires sont déduites des proportions de la silhouette / ima
 
 1. Cliquer sur une silhouette, ou la glisser sur le tableau. Pour une image personnelle, utiliser **Importer** : le détourage IA démarre automatiquement. Comparez avec l’original, réglez le calage vertical, puis choisissez si le sujet doit être conservé dans **My subjects**.
 2. Sélectionner un sujet et régler son nom, sa nature, sa taille, son unité et la dimension mesurée.
-3. Tirer une poignée supérieure pour redimensionner ou glisser le sujet horizontalement. **Aligner** redistribue les sujets ; **Ajuster** recadre le tableau. Après un zoom, glisser le fond pour naviguer horizontalement.
+3. Tirer une poignée supérieure pour redimensionner ou glisser le sujet. Une image importée peut aussi être glissée verticalement jusqu’à ce que ses pieds ou sa base touchent le sol. **Aligner** redistribue les sujets ; **Ajuster** recadre le tableau. Après un zoom, glisser le fond pour naviguer horizontalement.
 4. Le bouton palette ouvre les couleurs du fond et des graduations. Les couleurs personnalisées sont sauvegardées avec le projet.
 5. Régler la langue, le sujet de référence et, éventuellement, la scène via les options du prompt. Le texte est modifiable ; un changement de proportions le recalcule.
 6. **Exporter la référence** : télécharger l’image puis le prompt. **Projet → Enregistrer le projet** conserve une copie portable de tout le tableau.
 
-Raccourcis : `Ctrl/Cmd+Z` annuler, `Ctrl/Cmd+Maj+Z` ou `Ctrl+Y` rétablir, `Ctrl/Cmd+D` dupliquer, `Suppr` supprimer, `/` rechercher. Un sujet du tableau ayant le focus peut être déplacé avec les flèches et redimensionné avec `+` / `-`.
+Raccourcis : `Ctrl/Cmd+Z` annuler, `Ctrl/Cmd+Maj+Z` ou `Ctrl+Y` rétablir, `Ctrl/Cmd+D` dupliquer, `Suppr` supprimer, `/` rechercher. Un sujet du tableau ayant le focus peut être déplacé avec les flèches gauche/droite et redimensionné avec `+` / `-`. Pour une image importée, `↑` / `↓` ajustent aussi son calage vertical ; `Maj` accélère le réglage.
 
 Les fichiers importés sont limités à 15 Mo / 50 mégapixels puis ramenés à 1400 px sur leur grand côté. Un projet accepte jusqu’à 90 Mo d’images encodées. La sauvegarde automatique est liée à l’adresse et au navigateur utilisés ; un export JSON est recommandé pour conserver un projet durablement.
 
@@ -61,7 +61,7 @@ npm test
 
 Ils couvrent le catalogue, l’échelle commune, les unités, les rapports du prompt, les projets et la validation des données.
 
-Un parcours de navigateur est fourni dans `tests/browser-smoke.cjs`. Lancer d’abord l’application, puis exécuter le script avec Playwright disponible. Par défaut il utilise Microsoft Edge. `PLAYWRIGHT_MODULE` peut désigner le module Playwright et `BROWSER_PATH` un navigateur Chromium installé. Ce parcours vérifie le redimensionnement, le pétrolier, le détourage, les images importées, la persistance, les exports, la limite de 15 humains et l’absence de débordement sur mobile.
+Un parcours de navigateur est fourni dans `tests/browser-smoke.cjs`. Lancer d’abord l’application, puis exécuter le script avec Playwright disponible. Par défaut il utilise Microsoft Edge. `PLAYWRIGHT_MODULE` peut désigner le module Playwright et `BROWSER_PATH` un navigateur Chromium installé. Ce parcours vérifie le redimensionnement, le pétrolier, le détourage, le calage vertical direct des images importées, la persistance, les exports, la limite de 15 humains et l’absence de débordement sur mobile.
 
 ```sh
 node tests/browser-smoke.cjs
